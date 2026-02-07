@@ -1,0 +1,10 @@
+# Grupo 1: Todos los bots (Google, Bing, etc.)
+User-agent: *
+Allow: /
+
+# Evitar que se indexen archivos temporales o de configuración (si tuvieras)
+Disallow: /config/
+Disallow: /temp/
+
+# Enlace al mapa del sitio para ayudar al rastreo
+Sitemap: https://tuusuario.github.io/sitemap.xml

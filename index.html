@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZAN | Administrador de Sistemas & Ciberseguridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="izan.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- ===== LUCES ROJAS DE FONDO ===== -->
+    <div class="red-lights-container">
+        <div class="red-light-path red-light-left"></div>
+        <div class="red-light-path red-light-right"></div>
+    </div>
+
+    <!-- ===== CABECERA ===== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./index.html">IZAN</a><span>.</span>
+            </div>
+            <div class="subtitle">Estudiante de Administrador para Sistemas | Ciberseguridad</div>
+            
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#infraestructura" class="nav-link">Infraestructura</a></li>
+                    <li><a href="./ia_local.html" class="nav-link" >IA Local</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="lang-item">
+                        <a href="./izan_eng.html" class="nav-link lang-switch">
+                            <img src="./assets/UK.jpg" alt="English Version" class="lang-flag">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>IZAN</h1>
+            <div class="hero-subtitle">Estudiante para Administrador de Sistemas | Ciberseguridad | Infraestructura IT</div>
+            <p class="hero-text"><span class="highlight">Automatizo, documento y optimizo sistemas reales</span></p>
+            <a href="#proyectos" class="btn">Explorar Proyectos</a>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="section">
+        <div class="container">
+            <h2 class="section-title animate>">Sobre mí</h2>
+            <div class="about-content">
+                <div class="about-text animate delay-1">
+                    <p>Soy Izan Rodríguez, estudiante de Administración de Sistemas Informáticos en Red (ASIR) en el Institut Esteve Terradas i Illa. Me apasiona el mundo de la ciberseguridad, la administración de sistemas y la infraestructura IT, y estoy en un proceso continuo de aprendizaje para especializarme en estas áreas.</p><br>
+                    <p>Mi experiencia laboral es todavía limitada, pero ya he trabajado como técnico de soporte N1, y actualmente realizo mis prácticas de grado superior en NEXTT&Tech, donde participo en tareas reales de administración, despliegue y mantenimiento de sistemas.
+                    <br><br> seguir creciendo profesionalmente, asumir nuevos retos y consolidarme en el ámbito de la ciberseguridad y la administración de sistemas.</p>
+                    <h3>Algunas de las tecnologias que he aprendido a usar</h3>
+                    <div class="skills">
+                        <span class="tag">Linux/Unix</span>
+                        <span class="tag">Windows</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">Proxmox</span>
+                        <span class="tag">DNS/DHCP</span>
+                        <span class="tag">Python/Bash</span>
+                    </div>
+                </div> <br>
+                <div class="about-image animate delay-2">
+                    <div style="background: var(--card-bg); height: 400px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-secondary);">
+                        <i class="fas fa-user-shield" style="font-size: 4rem; color: var(--accent-primary); margin-right: 20px;"></i>
+                        
+                        <div>
+                            <div style="font-size: 1.1rem; margin-bottom: 10px;">Perfil Profesional</div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Administrador Junior</div>
+                            <div style="margin-top: 20px; display: flex; gap: 10px;">
+                                <div style="background: var(--accent-primary); width: 12px; height: 12px; border-radius: 50%;"></div>
+                                <div style="background: var(--accent-secondary); width: 12px; height: 12px; border-radius: 50%;"></div>
+                                <div style="background: #2E2E2E; width: 12px; height: 12px; border-radius: 50%;"></div>
+                            </div>
+                        </div>
+                    </div><br> 
+
+                </div>
+            </div>
+            <div class="DownloadCV">
+                <a class="downloadbtn" href="assets/IzanRodriguez_CV.pdf" download>Descargar CV en PDF</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2 class="section-title animate">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card animate delay-1">
+                    <div class="card-content">
+                        <h3>Montaje de NAS casero</h3>
+                        <p>Montaje de un NAS con un pequeño portatil y un disco externo, con un ubuntu server instalado, usando Samba. Sistema de permisos configurado.
+                            Script para montaje automatico en Github.
+                        </p>
+                        <div class="tech-list">
+                            <span class="tag">Ubuntu Server</span>
+                            <span class="tag">NAS</span>
+                            <span class="tag">Sistema de archivos</span>
+                            <span class="tag">Permisos y Seguridad</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn" onclick="openModal('monitorizacion')">Ver Detalles</button>
+                            <a href="https://github.com/Izan1706" class="btn btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card animate delay-2">
+                    <div class="card-content">
+                        <h3>Automatización de Backups por Powershell</h3>
+                        <p>He creado un script en Powershell para automatizar backups de servidores y sistemas de archivos, integrando cifrado y compresión de archivo. </p>
+                        <div class="tech-list">
+                            <span class="tag">Windows Powershell</span>
+                            <span class="tag">Scripting</span>
+                            <span class="tag">Backup</span>
+                            <span class="tag">Automático y encriptado</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn" onclick="openModal('automatizacion')">Ver Detalles</button>
+                            <a href="https://github.com/Izan1706" class="btn btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card animate delay-3">
+                    <div class="card-content">
+                        <h3>IA generativa en local</h3>
+                        <p>He implementado una solución de IA generativa en entorno local linux (Sin necesidad de acceder a internet),sobre Docker para monousuario o multiples usuarios locales
+                            Capaz de generar texto e imagenes, también capaz de leer archivos que el cliente suba.
+                        </p>
+                        <div class="tech-list">
+                            <span class="tag">Linux</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">IA Generativa</span>
+                            <span class="tag">Multiusuario</span>
+                            <span class="tag">Local</span>
+                            <span class="tag">Seguridad</span>
+
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn" onclick="openModal('cloud')">Ver Detalles</button>
+                            <a href="./ia_local.html" class="btn btn-outline">IA Local</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFRAESTRUCTURA ===== -->
+
+<section id="infraestructura" class="section">
+    <div class="container">
+        <h2 class="section-title animate">Recorrido profesional</h2>
+        <div class="infra-content">
+            <div class="infra-diagram animate delay-2">
+                <svg class="diagram" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Título "Recorrido" en la parte superior -->
+                    <text class="diagram-main-title" x="200" y="30" text-anchor="middle" fill="var(--accent-primary)" font-size="24" font-weight="bold">Recorrido</text>
+                    
+                    <!-- Nubes / Master -->
+                    <rect class="diagram-node" x="100" y="50" width="200" height="40" rx="10" ry="10"/>
+                    <text class="diagram-label" x="200" y="75" text-anchor="middle">Master en Ciberseguridad</text>
+                    
+                    <text class="diagram-label" x="200" y="120" text-anchor="middle">Futuro</text>
+                    <!-- GS -->
+                    <rect class="diagram-node" x="55" y="150" width="290" height="40" rx="10" ry="10"/>
+                    <text class="diagram-label" x="200" y="175" text-anchor="middle">Grado Superior ASIX (Especial)</text>
+                    
+                    <!-- GM -->
+                    <rect class="diagram-node" x="60" y="250" width="280" height="40" rx="10" ry="10"/>
+                    <text class="diagram-label" x="200" y="275" text-anchor="middle" fill="var(--accent-primario)">Grado medio SMX</text>
+                    
+                    <!-- Conexiones -->
+                    <line class="diagram-line" x1="200" y1="105" x2="200" y2="91" />
+                    <line class="diagram-line" x1="200" y1="149" x2="200" y2="125" />
+                    <line class="diagram-line" x1="200" y1="249" x2="200" y2="191" />
+                
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== CONTACTO / PIE DE PÁGINA ===== -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">IZAN<span>.</span></div>
+                    <p>Administrador de Sistemas y Especialista en Ciberseguridad con enfoque en soluciones robustas, seguras y automatizadas.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Izan1706" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/izan-rodriguez-a35652295/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                       <a href="mailto:izanro06@gmail.com" 
+                            onclick="handleContactClick(event)"
+                            class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> izanro06@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#infraestructura">Infraestructura</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Systems Operational</span>
+                <span class="uptime">Uptime: 99.9%</span>
+            </div>
+            <div class="copyright">
+                &copy; 2026 IZAN. Todos los derechos reservados. Portafolio técnico de administración de sistemas y ciberseguridad.
+            </div>
+        </div>
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24c.304-.143.662-.352 1.048-.625a11.777 11.777 0 0 0 2.517-2.453c1.678-2.195 2.961-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+            </svg>
+            <span>SSL Secured | AES-256 Verified Connection</span>
+        </div>
+    </footer>
+
+    <!-- ===== MODALES ===== -->
+    <div class="modal" id="modal-monitorizacion">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Montaje de NAS</h2>
+                <button class="close-modal" onclick="closeModal('monitorizacion')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>He montado un sistema NAS facilmente escalable y sin importar tu hardware, yo use un viejo portatil con una unidad de almacenamiento externa, instale sistema operativo he usado Ubuntu Server. Ademas para garantizar la seguridad se ha configurado el sistema de permisos. Este NAS permite compartir y almacenar archivos sin importar el sistema operativo del cliente.</p>
+                <p><strong>Objetivo:</strong> Crear una solución de almacenamiento compartido segura y accesible desde múltiples dispositivos en una misma red.</p>
+                
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="modal-tech">
+                    <span class="tag">Ubuntu Server</span>
+                    <span class="tag">Samba</span>
+                    <span class="tag">Windows</span>
+                </div>
+                
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Segurización mediante permisos bien estructurados</li>
+                    <li>Rendimiento incluso en hardware limitado</li>
+                    <li>Facilmente escalable y exportable a hardware mas portente</li>
+                    <li>Compatibilidad de cliente con varios sistemas operativos</li>
+                </ul>
+                
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('monitorizacion')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-automatizacion">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Automatización de Backups via Powershell</h2>
+                <button class="close-modal" onclick="closeModal('automatizacion')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Desarrollé un script en Powershell para automatizar backups de servidores y sistemas de archivos, integrando mecanismos de cifrado y compresión de archivo. Puede ser muy util también si lo combinas con un NAS en windows.</p>
+                <p><strong>Objetivo:</strong> Garantizar la seguridad de los datos mediante backups automatizados y cifrados, aún despues de una catastrofe.</p>
+                
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="modal-tech">
+                    <span class="tag">Windows</span>
+                    <span class="tag">Powershell</span>
+                    <span class="tag">AES-256</span>
+                    <span class="tag">Zip</span>
+                    <span class="tag">Scripting</span>
+                </div>
+                
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Prevenir mejor que curar</li>
+                    <li>Seguridad de los datos</li>
+                    <li>Automatico y encriptado</li>
+                    <li>Compresión a zip</li>
+                    <li>Validación de rutas origen y destino</li>
+                    <li>Control de errores</li>
+                </ul>
+                
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('automatizacion')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-cloud">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">IA generativa en local</h2>
+                <button class="close-modal" onclick="closeModal('cloud')">&times;</button>
+            </div>
+            <div class="modal-body">
+                    <p>He aprendido a implementar la IA generativa en local, lo que significa que no se necesita acceder a internet, asi mismo poder asegurar que es un sistema mas seguro de cualquier posible ataque o sniffing desde el exterior.
+                        Es capaz de aprender de archivos que el usuario suba y generar texto basandose en estos archivos, también opcionalmente generar imagenes, existe la posibilidad de crear usuarios independientes.</p>
+                <p><strong>Objetivo:</strong> Implementar una solución de IA generativa en entorno local, aumenta la productividad mientras que es capaz de operar sin conexión a internet, garantizando la privacidad y seguridad de los datos.</p>
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="modal-tech">
+                    <span class="tag">Linux</span>
+                    <span class="tag">Ollama</span>
+                    <span class="tag">Mistral</span>
+                    <span class="tag">IA generativa</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">IA</span>
+                </div>
+                
+                <h3>Componentes Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Aumento de productividad</li>
+                    <li>Seguridad de los datos y filtraciones</li>
+                    <li>Multiusuario simultaneo</li>
+                    <li>Sistema sencillo de mantener</li>
+                    <li>Generación de contenido texto e imagenes</li>
+                    <li>Sistema totalmente en local</li>
+                    <li>Capacidad de aprendizaje a partir de archivos subidos por el usuario</li>
+                </ul>
+                
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('cloud')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
