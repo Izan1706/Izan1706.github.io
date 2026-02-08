@@ -1,0 +1,4 @@
+Contact: mailto:izanro06@gmail.com
+Expires: 2030-01-01T00:00:00.000Z
+Acknowledgments: https://github.com/izan1706
+Policy: Please report security issues responsibly.
