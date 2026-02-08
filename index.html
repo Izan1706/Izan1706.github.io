@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="izan.css">
-    <link rel="icon" href="icono.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- ===== LUCES ROJAS DE FONDO ===== -->
@@ -47,66 +47,147 @@
     </header>
 
     <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="container hero-content">
+<section class="hero">
+    <div class="container hero-layout">
+        <div class="hero-header">
             <h1>IZAN</h1>
-            <div class="hero-subtitle">Estudiante para Administrador de Sistemas | Ciberseguridad | Infraestructura IT</div>
-            <p class="hero-text"><span class="highlight">Automatizo, documento y optimizo sistemas reales</span></p>
-            <a href="#proyectos" class="btn">Explorar Proyectos</a>
-        </div>
-    </section>
-
-    <!-- ===== SOBRE MÍ ===== -->
-    <section id="sobre-mi" class="section">
-        <div class="container">
-            <h2 class="section-title animate>">Sobre mí</h2>
-            <div class="about-content">
-                <div class="about-text animate delay-1">
-                    <p>Soy Izan Rodríguez, estudiante de Administración de Sistemas Informáticos en Red (ASIR) en el Institut Esteve Terradas i Illa. Me apasiona el mundo de la ciberseguridad, la administración de sistemas y la infraestructura IT, y estoy en un proceso continuo de aprendizaje para especializarme en estas áreas.</p><br>
-                    <p>Mi experiencia laboral es todavía limitada, pero ya he trabajado como técnico de soporte N1, y actualmente realizo mis prácticas de grado superior en NEXTT&Tech, donde participo en tareas reales de administración, despliegue y mantenimiento de sistemas.
-                    <br><br> seguir creciendo profesionalmente, asumir nuevos retos y consolidarme en el ámbito de la ciberseguridad y la administración de sistemas.</p>
-                    <h3>Algunas de las tecnologias que he aprendido a usar</h3>
-                    <div class="skills">
-                        <span class="tag">Linux/Unix</span>
-                        <span class="tag">Windows</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Ansible</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag">Proxmox</span>
-                        <span class="tag">DNS/DHCP</span>
-                        <span class="tag">Python/Bash</span>
-                    </div>
-                </div> <br>
-                <div class="about-image animate delay-2">
-                    <div style="background: var(--card-bg); height: 400px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-secondary);">
-                        <i class="fas fa-user-shield" style="font-size: 4rem; color: var(--accent-primary); margin-right: 20px;"></i>
-                        
-                        <div>
-                            <div style="font-size: 1.1rem; margin-bottom: 10px;">Perfil Profesional</div>
-                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Administrador Junior</div>
-                            <div style="margin-top: 20px; display: flex; gap: 10px;">
-                                <div style="background: var(--accent-primary); width: 12px; height: 12px; border-radius: 50%;"></div>
-                                <div style="background: var(--accent-secondary); width: 12px; height: 12px; border-radius: 50%;"></div>
-                                <div style="background: #2E2E2E; width: 12px; height: 12px; border-radius: 50%;"></div>
-                            </div>
-                        </div>
-                    </div><br> 
-
-                </div>
-            </div>
-            <div class="DownloadCV">
-                <a class="downloadbtn" href="assets/IzanRodriguez_CV.pdf" download>Descargar CV en PDF</a>
-            </div>
+            <div class="hero-fade-bar"></div>
         </div>
         
-    </section>
+        <div class="hero-body">
+            <div class="hero-subtitle">Estudiante para Administrador de Sistemas | Ciberseguridad</div>
+            <p class="hero-text"><span class="highlight">Automatizo, documento y optimizo sistemas reales</span></p>
+            
+            <div class="hero-actions">
+                <a href="#proyectos" class="btn-hero"><i class="fas fa-code"></i> Proyectos</a>
+                <a href="assets/IzanRodriguez_CV.pdf" class="btn-hero cv-highlight" download>
+                    <i class="fas fa-file-download"></i> Descargar CV
+                </a>
+                <div class="hero-social-mini">
+                    <a href="https://github.com/Izan1706"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/izan-rodriguez-a35652295/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ===== EXPERIENCIA Y HABILIDADES===== -->
+<section id="experiencia" class="experience">
+    <div class="container">
+        <h2 class="section-title">Experiencia</h2>
+        <div class="experience-list">
+            <div class="exp-item">
+                <div class="exp-date">2022 - 2024   Esteve terradas i illa</div>
+                <div class="exp-content">
+                    <h3>Grado medio SMX (Sistemas Microinformáticos y Redes)</h3>
+                    <p>Formación técnica en administración de sistemas, redes y soporte informático. Adquirí conocimientos en hardware, software, redes y seguridad informática.</p>
+                </div>
+            <div class="exp-item">
+                <div class="exp-date">2023 - 2024   Futbollab</div>
+                <div class="exp-content">
+                    <h3>Trabajo de prácticas de grado medio</h3>
+                    <p>Administre Hardware y realize mantenimiento preventivo y correctivo de los equipos, administre la red local de la oficina y resolví incidencias</p>
+                </div>
+            <div class="exp-item">
+                <div class="exp-date">2023 - Actualidad</div>
+                <div class="exp-content">
+                    <h3>Estudiante de Grado Superior</h3>
+                    <p>Administración de Sistemas Informáticos en Red (ASIR). Especialización en despliegue de infraestructuras críticas y seguridad.</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">2025 - Actualidad</div>
+                <div class="exp-content">
+                    <h3> Trabajo de prácticas de grado superior en NEXTT&Tech </h3>
+                    <p> Participo en tareas reales de administración, despliegue y mantenimiento de sistemas, aplicando conocimientos técnicos en un entorno profesional.</p>
+                </div>
+            </div>
+            </div>
+    </div>
+</section>
+
+<section id="habilidades" class="skills-section">
+    <div class="container">
+        <h2 class="section-title">Habilidades & Tech Stack</h2>
+        <div class="skills-layout">
+            <div class="skills-main-card project-card">
+                <div class="project-content">
+                    <h3>Perfil Técnico</h3>
+                    <p>Me enfoco en mejorar la eficiencia y seguridad de sistemas informatico, aprovecho cada oportunidad para mejorar y aprender algo nuevo.</p>
+                    <ul class="skills-highlights">
+                        <li><i class="fas fa-check-circle"></i> Gestión de equipos Linux/Windows</li>
+                        <li><i class="fas fa-check-circle"></i> Configuración de de servicios de red</li>
+                        <li><i class="fas fa-check-circle"></i> Virtualización y Contenedores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-side">
+                <div class="tech-group">
+                    <h4>Sistemas & Cloud</h4>
+                    <div class="tech-tags">
+                        <span class="tag">Linux</span>
+                        <span class="tag">Windows Server</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Proxmox</span>
+                    </div>
+                </div>
+                <div class="tech-group">
+                    <h4>Ciberseguridad</h4>
+                    <div class="tech-tags">
+                        <span class="tag">Hardening</span>
+                        <span class="tag">VPN</span>
+                        <span class="tag">OSINT</span>
+                        <span class="tag">Auditoría</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ===== SOBRE MÍ ===== -->
+  <section id="sobre-mi" class="about-me">
+    <div class="container">
+        <h2 class="section-title">Detrás de la terminal</h2>
+        <div class="about-layout">
+            <div class="about-text-box">
+                <p>
+                    Soy ese tipo de persona que, si algo funciona a la primera, sospecha. No soy pesimista, pero necesito entender los <span class="highlight">"porqués"</span> de un error que sucede simplemente dándole a un botón de "Play".
+                </p>
+                <p>
+                    Para mí, un buen plan de tarde es montar un laboratorio en casa para ver hasta dónde puedo forzar un sistema antes de que rompa. Lo que más disfruto es tener <span class="highlight">tranquilidad</span> para poder probar tecnologias como Ollama</p>
+                </p>
+            </div>
+            
+            <div class="about-status-card project-card">
+                <h3>System Status</h3>
+                <div class="status-list">
+                    <div class="status-item">
+                        <span class="status-label">Leyendo:</span>
+                        <span class="status-value">IA generativa en local</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Bebida:</span>
+                        <span class="status-value">Agua o Café</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">OS:</span>
+                        <span class="status-value">Ubuntu Stable</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Idiomas:</span>
+                        <span class="status-value">Español nativo, Catalán nativo, Inglés intermedio</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- ===== PROYECTOS ===== -->
     <section id="proyectos" class="section">
         <div class="container">
             <h2 class="section-title animate">Proyectos Destacados</h2>
             <div class="projects-grid">
-                <!-- rebuild -->
                 <!-- Proyecto 1 -->
                 <div class="project-card animate delay-1">
                     <div class="card-content">
@@ -122,7 +203,7 @@
                         </div>
                         <div class="card-actions">
                             <button class="btn" onclick="openModal('monitorizacion')">Ver Detalles</button>
-                            <a href="https://github.com/Izan1706" class="btn btn-outline">GitHub</a>
+                            <a href="https://github.com/Izan1706/NAS-Script-Linux" class="btn btn-outline">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +221,7 @@
                         </div>
                         <div class="card-actions">
                             <button class="btn" onclick="openModal('automatizacion')">Ver Detalles</button>
-                            <a href="https://github.com/Izan1706" class="btn btn-outline">GitHub</a>
+                            <a href="https://github.com/Izan1706/Scripts_Powershell" class="btn btn-outline">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -369,8 +450,7 @@
             </div>
         </div>
     </div>
-    <script src="script.js">     
-    </script>
+    <script src="script.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVQ2B2LY4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -381,9 +461,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
