@@ -474,6 +474,7 @@
     color: var(--accent-secondary);
     font-family: 'Courier New', monospace; 
     font-size: 0.95rem;
+    padding-left: 10%;
 }
 
 @media (max-width: 992px) {
@@ -1125,4 +1126,5 @@
         gap: 8px;
     }
 }
+
 
