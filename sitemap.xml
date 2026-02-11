@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://izan1706.github.io/</loc>
+    <loc>https://izan1706.github.io/index.html</loc>
+    <loc>https://izan1706.github.io/ia_local.html</loc>
+    <loc>https://izan1706.github.io/izan_eng.html</loc>
+    <loc>https://izan1706.github.io/ia_localeng.html</loc>
     <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>
+
 
