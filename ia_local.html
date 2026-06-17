@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZAN | IA Generativa en Local</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="izan.css">
+    <link rel="stylesheet" href="stylehomelab.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+<body>
+    <div class="red-lights-container">
+        <div class="red-light-path red-light-left"></div>
+        <div class="red-light-path red-light-right"></div>
+    </div>
+
+    <!-- ===== CABECERA ===== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./index.html">IZAN</a><span>.</span>
+            </div>
+            <div class="subtitle">Estudiante de Administración de Sistemas | Ciberseguridad</div>
+
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="./index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="./homelab.html" class="nav-link">HomeLab & Sistemas</a></li>
+                    <li><a href="./izanagi.html" class="nav-link">Herramientas Propias</a></li>
+                    <li><a href="./ia_local.html" class="nav-link active">IA Local</a></li>
+                    <li><a href="./index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li class="lang-item">
+                        <a href="./ia_localeng.html" class="nav-link lang-switch">
+                            <img src="./assets/UK.jpg" alt="English Version" class="lang-flag">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="homelab-sidebar" id="homelab-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-header-icon"><i class="fas fa-brain"></i></div>
+            <span class="sidebar-header-title">IA Local</span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-group">
+                <a href="#intro" class="sidebar-item active">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Introducción</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#requisitos" class="sidebar-item">
+                    <i class="fas fa-microchip"></i>
+                    <span>Requisitos</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#hardware" class="sidebar-subitem">↳ Hardware</a>
+                    <a href="#software" class="sidebar-subitem">↳ Software</a>
+                </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#ollama" class="sidebar-item">
+                    <i class="fas fa-server"></i>
+                    <span>Ollama (Motor LLM)</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#docker-webui" class="sidebar-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker + Open WebUI</span>
+                </a>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#imagenes" class="sidebar-item">
+                    <i class="fas fa-image"></i>
+                    <span>Generación de Imágenes</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#comfyui" class="sidebar-subitem">↳ ComfyUI</a>
+                    <a href="#flux" class="sidebar-subitem">↳ Flux.1 GGUF</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <a href="#integracion" class="sidebar-item">
+                    <i class="fas fa-plug"></i>
+                    <span>Integración Final</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Mobile toggle -->
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Abrir menú">
+        <i class="fas fa-brain"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="homelab-wrap">
+        <div class="homelab-content">
+
+            <!-- HERO -->
+            <div class="hl-hero">
+                <div class="hl-hero-badge"><i class="fas fa-circle" style="font-size:0.5rem"></i> Proyecto Personal Activo</div>
+                <h1>IA <span>Generativa</span><br>en Local</h1>
+                <p>Despliegue completo de un ecosistema de Inteligencia Artificial sobre Linux y Docker. Sin dependencia de servicios externos, sin envío de datos a la nube. 100% privado, 100% tuyo.</p>
+                <div class="hl-hero-stats">
+                    <div class="hl-stat">
+                        <span class="hl-stat-val">100%</span>
+                        <span class="hl-stat-lbl">Local & privado</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-stat-val">Multi</span>
+                        <span class="hl-stat-lbl">Usuario en red local</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-stat-val">RAG</span>
+                        <span class="hl-stat-lbl">Lectura de archivos</span>
+                    </div>
+                    <div class="hl-stat">
+                        <span class="hl-stat-val">0€</span>
+                        <span class="hl-stat-lbl">Subscripciones IA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTRODUCCIÓN -->
+            <section class="hl-section" id="intro">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-info-circle"></i></div>
+                    <h2>Introducción <span>& Propósito</span></h2>
+                </div>
+                <p class="hl-text">En la actualidad, la soberanía de los datos y la privacidad se han convertido en pilares fundamentales del desarrollo tecnológico. Este proyecto nace de la necesidad de desplegar un ecosistema de Inteligencia Artificial de alto rendimiento que funcione de manera 100% local, eliminando la dependencia de servicios en la nube y garantizando la seguridad de la información.</p>
+                <p class="hl-text">El despliegue cubre el proceso completo de configuración de un entorno sobre Linux, utilizando <strong style="color:#fff">Ollama</strong> como motor de modelos de lenguaje (LLM), <strong style="color:#fff">Docker + Open WebUI</strong> para la interfaz multiusuario, y <strong style="color:#fff">ComfyUI + Flux.1</strong> para la generación avanzada de imágenes. El objetivo es demostrar que con hardware de consumo es posible alcanzar flujos de trabajo profesionales en IA con latencia mínima y control total.</p>
+                <div class="hl-info-box">
+                    <p><i class="fas fa-shield-alt" style="margin-right:8px"></i>Ningún dato abandona la red local. Los modelos se ejecutan íntegramente en la GPU local, sin APIs externas ni suscripciones de pago.</p>
+                </div>
+                <div class="hl-tag-list" style="margin-top:16px">
+                    <span class="hl-tag">Ollama</span>
+                    <span class="hl-tag">Open WebUI</span>
+                    <span class="hl-tag">Docker</span>
+                    <span class="hl-tag">ComfyUI</span>
+                    <span class="hl-tag">Flux.1 GGUF</span>
+                    <span class="hl-tag green">Mistral / Llama</span>
+                </div>
+            </section>
+
+            <!-- REQUISITOS -->
+            <section class="hl-section" id="requisitos">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-microchip"></i></div>
+                    <h2>Requisitos <span>del Sistema</span></h2>
+                </div>
+
+                <div class="hl-subsection" id="hardware">
+                    <div class="hl-subsection-title">Hardware</div>
+                    <p class="hl-text">La VRAM de la GPU es el factor crítico. Con 16GB se pueden cargar modelos como Mistral 12B, modelos de 24b como máximo o Flux.1 íntegramente en GPU, lo que da velocidades de inferencia muy superiores a usar RAM del sistema.</p>
+                    <table class="hw-table">
+                        <thead>
+                            <tr><th>Componente</th><th>Especificación</th><th>Rol</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="hw-label">CPU</td><td class="hw-val">Intel i5-13600KF</td><td>Cómputo auxiliar y Docker</td></tr>
+                            <tr><td class="hw-label">RAM</td><td class="hw-val">2 × 8GB Kingston Fury 3200MHz</td><td>Sistema y contenedores</td></tr>
+                            <tr><td class="hw-label">GPU</td><td class="hw-val">NVIDIA RTX 4060 Ti 16GB VRAM</td><td>Inferencia IA (CUDA)</td></tr>
+                            <tr><td class="hw-label">Almacenamiento</td><td class="hw-val">1TB NVMe M.2 Kingston</td><td>Modelos y contenedores</td></tr>
+                            <tr><td class="hw-label">Sistema Operativo</td><td class="hw-val">Ubuntu</td><td>Host principal</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="hl-subsection" id="software">
+                    <div class="hl-subsection-title">Dependencias de Software</div>
+                    <div class="hl-services-grid">
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fab fa-docker"></i></div>
+                                <h4>Docker</h4>
+                            </div>
+                            <p>Para el aislamiento de la interfaz de usuario (Open WebUI) en contenedores.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fab fa-python"></i></div>
+                                <h4>Python 3.10+</h4>
+                            </div>
+                            <p>Necesario para los entornos virtuales de ComfyUI y las dependencias de PyTorch.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fas fa-terminal"></i></div>
+                                <h4>Drivers NVIDIA + CUDA</h4>
+                            </div>
+                            <p>Drivers actualizados con soporte CUDA para aceleración GPU en inferencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OLLAMA -->
+            <section class="hl-section" id="ollama">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-server"></i></div>
+                    <h2>Ollama — <span>Motor de Inferencia</span></h2>
+                </div>
+                <p class="hl-text">Ollama actúa como el backend o "cerebro" encargado de ejecutar los modelos LLM en local. Se instala como servicio del sistema y detecta automáticamente la GPU NVIDIA disponible.</p>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Instalación</div>
+                    <div class="hl-code"><span class="comment"># Instalación automática oficial</span><br>
+<span class="cmd">curl -fsSL https://ollama.com/install.sh | sh</span><br><br>
+<span class="comment"># Verificar que el servicio está activo</span><br>
+<span class="comment"># Acceder a: http://localhost:11434</span><br>
+<span class="comment"># Debe mostrar: "Ollama is running"</span></div>
+                    <p class="hl-text" style="margin-top:12px">El instalador descarga los binarios, crea el usuario de sistema <code style="color:#00E676">ollama</code>, configura un servicio systemd con arranque automático y detecta el hardware gráfico NVIDIA.</p>
+                </div>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Descarga de Modelos LLM</div>
+                    <div class="hl-code"><span class="comment"># Descargar modelo (buscar en https://ollama.com/library)</span><br>
+<span class="cmd">ollama pull mistral-nemo</span><span class="comment">   # 7.1 GB — 12B parámetros</span><br>
+<span class="cmd">ollama pull llama3.1</span><span class="comment">       # 4.7 GB — 8B parámetros</span><br><br>
+<span class="comment"># Listar modelos instalados</span><br>
+<span class="cmd">ollama list</span></div>
+                    <div class="hl-warn-box" style="margin-top:12px">
+                        <p><i class="fas fa-exclamation-triangle" style="margin-right:8px"></i>Asegúrate de tener suficiente VRAM antes de descargar modelos grandes. Mistral 12B requiere ~8GB VRAM en cuantización Q4.</p>
+                    </div>
+                </div>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Exposición a la Red Local</div>
+                    <p class="hl-text">Por defecto, Ollama solo escucha en <code style="color:#00E676">127.0.0.1</code>. Para que el contenedor Open WebUI o dispositivos de la red puedan conectarse, hay que cambiar el bind address:</p>
+                    <div class="hl-code"><span class="comment"># Editar la configuración del servicio systemd</span><br>
+<span class="cmd">sudo systemctl edit ollama.service</span><br><br>
+<span class="comment"># Añadir en la sección [Service]:</span><br>
+Environment="OLLAMA_HOST=0.0.0.0"<br><br>
+<span class="comment"># Aplicar cambios</span><br>
+<span class="cmd">sudo systemctl daemon-reload</span><br>
+<span class="cmd">sudo systemctl restart ollama</span></div>
+                </div>
+            </section>
+
+            <!-- DOCKER + OPEN WEBUI -->
+            <section class="hl-section" id="docker-webui">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fab fa-docker"></i></div>
+                    <h2>Docker <span>+ Open WebUI</span></h2>
+                </div>
+                <p class="hl-text">Open WebUI es la interfaz web que conecta con el backend de Ollama. Se despliega como contenedor Docker aislado con datos persistentes y se levanta automáticamente al reiniciar el equipo.</p>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Instalación de Docker</div>
+                    <div class="hl-code"><span class="comment"># Instalar Docker desde repositorios oficiales de Ubuntu</span><br>
+<span class="cmd">sudo apt update && sudo apt install docker.io -y</span><br><br>
+<span class="comment"># Añadir usuario al grupo docker (evitar usar sudo constantemente)</span><br>
+<span class="cmd">sudo usermod -aG docker $USER</span><br>
+<span class="cmd">newgrp docker</span></div>
+                </div>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Despliegue de Open WebUI</div>
+                    <div class="hl-code"><span class="cmd">docker run -d</span> \<br>
+&nbsp;&nbsp;<span class="cmd">--network host</span> \<span class="comment">          # Comparte la red con el PC (necesario para ver Ollama)</span><br>
+&nbsp;&nbsp;<span class="cmd">-v open-webui:/app/backend/data</span> \<span class="comment"> # Datos persistentes</span><br>
+&nbsp;&nbsp;<span class="cmd">--name open-webui</span> \<br>
+&nbsp;&nbsp;<span class="cmd">--restart always</span> \<span class="comment">          # Arranca automáticamente al reiniciar</span><br>
+&nbsp;&nbsp;ghcr.io/open-webui/open-webui:main</div>
+                    <p class="hl-text" style="margin-top:12px">La interfaz queda disponible en <strong style="color:#00E676">http://localhost:8080</strong>. En el primer acceso se crea una cuenta de administrador local — ningún dato se envía a servidores externos.</p>
+                    <span class="hl-status-badge online" style="margin-top:0"><span class="dot"></span>Activo — Puerto 8080</span>
+                </div>
+
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Configuración de Conexión</div>
+                    <p class="hl-text">En el Panel de Administración → Ajustes → Conexiones, configura la URL de Ollama:</p>
+                    <div class="hl-code"><span class="comment"># Si usas --network host:</span><br>
+http://127.0.0.1:11434<br><br>
+<span class="comment"># Si usas red de Docker estándar:</span><br>
+http://host.docker.internal:11434</div>
+                    <div class="hl-info-box" style="margin-top:12px">
+                        <p><i class="fas fa-users" style="margin-right:8px"></i>Open WebUI soporta múltiples cuentas de usuario. Cada usuario puede tener conversaciones independientes, sus propios archivos (RAG) y configuraciones personalizadas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GENERACIÓN DE IMÁGENES -->
+            <section class="hl-section" id="imagenes">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-image"></i></div>
+                    <h2>Generación de <span>Imágenes</span></h2>
+                </div>
+                <p class="hl-text">Para la generación de imágenes se usa <strong style="color:#fff">ComfyUI</strong>, una interfaz basada en nodos altamente modular, junto con el modelo <strong style="color:#fff">Flux.1</strong> en versión cuantizada (GGUF) para optimizar el uso de VRAM.</p>
+
+                <div class="hl-subsection" id="comfyui">
+                    <div class="hl-subsection-title">ComfyUI — Instalación</div>
+                    <div class="hl-code"><span class="comment"># Instalar dependencias</span><br>
+<span class="cmd">sudo apt install git python3-venv python3-pip -y</span><br><br>
+<span class="comment"># Clonar y preparar entorno</span><br>
+<span class="cmd">mkdir -p ~/IA && cd ~/IA</span><br>
+<span class="cmd">git clone https://github.com/comfyanonymous/ComfyUI.git</span><br>
+<span class="cmd">cd ComfyUI</span><br><br>
+<span class="comment"># Crear entorno virtual e instalar PyTorch con soporte CUDA</span><br>
+<span class="cmd">python3 -m venv venv && source venv/bin/activate</span><br>
+<span class="cmd">pip install torch torchvision torchaudio \</span><br>
+&nbsp;&nbsp;--extra-index-url https://download.pytorch.org/whl/cu121<br>
+<span class="cmd">pip install -r requirements.txt</span><br><br>
+<span class="comment"># Iniciar ComfyUI (acceder en http://127.0.0.1:8188)</span><br>
+<span class="cmd">python main.py</span></div>
+                </div>
+
+                <div class="hl-subsection" id="flux">
+                    <div class="hl-subsection-title">Flux.1 GGUF — Modelo de Imágenes</div>
+                    <p class="hl-text">El modelo Flux.1 Dev original es demasiado grande para caber en muchas configuraciones. Se utiliza la versión cuantizada <strong style="color:#fff">Q4_K_S</strong> (6.81 GB) desde HuggingFace, que reduce el consumo de VRAM sin pérdida de calidad perceptible.</p>
+                    <div class="hl-code"><span class="comment"># Instalar soporte GGUF para ComfyUI</span><br>
+<span class="cmd">cd ~/IA/ComfyUI/custom_nodes</span><br>
+<span class="cmd">git clone https://github.com/city96/ComfyUI-GGUF.git</span><br>
+<span class="cmd">cd ..</span><br>
+<span class="cmd">pip install -r custom_nodes/ComfyUI-GGUF/requirements.txt</span><br><br>
+<span class="comment"># Mover el modelo a su carpeta correspondiente</span><br>
+<span class="cmd">mv flux1-dev-Q4_K_S.gguf models/unet/</span><br><br>
+<span class="comment"># Descargar y colocar los componentes adicionales:</span><br>
+<span class="comment"># - t5xxl_fp8_e4m3fn.safetensors  →  models/clip/</span><br>
+<span class="comment"># - clip_l.safetensors             →  models/clip/</span><br>
+<span class="comment"># - ae.safetensors (VAE)           →  models/vae/</span></div>
+                    <div class="hl-info-box" style="margin-top:12px">
+                        <p><i class="fas fa-clock" style="margin-right:8px"></i>El tiempo de generación varía según la resolución y los pasos de muestreo. En una RTX 4060 Ti 16GB, una imagen de 1024×1024 tarda aproximadamente 60 segundos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTEGRACIÓN FINAL -->
+            <section class="hl-section" id="integracion">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-plug"></i></div>
+                    <h2>Integración <span>Final</span></h2>
+                </div>
+                <p class="hl-text">Con todos los componentes instalados, el ecosistema de IA queda completamente operativo en la red local. Cualquier dispositivo conectado a la misma red (incluido el móvil) puede acceder a la interfaz de chat y generación de imágenes.</p>
+                <div class="hl-services-grid">
+                    <div class="hl-card">
+                        <h4><i class="fas fa-comments" style="color:#2962FF;margin-right:8px"></i>Chat Multimodal</h4>
+                        <p class="hl-text">Open WebUI en <strong style="color:#fff">http://[IP-LOCAL]:8080</strong> — Selecciona Mistral, Llama u otro modelo instalado. Sube documentos PDF o imágenes para activar capacidades RAG.</p>
+                    </div>
+                    <div class="hl-card">
+                        <h4><i class="fas fa-paint-brush" style="color:#00E676;margin-right:8px"></i>Generación de Imágenes</h4>
+                        <p class="hl-text">ComfyUI en <strong style="color:#fff">http://[IP-LOCAL]:8188</strong> — Configura el workflow con Flux.1 GGUF, CLIP/T5 y VAE. Escribe el prompt en inglés para mejores resultados.</p>
+                    </div>
+                    <div class="hl-card">
+                        <h4><i class="fas fa-mobile-alt" style="color:#FFC107;margin-right:8px"></i>Acceso desde Móvil</h4>
+                        <p class="hl-text">Conecta el móvil a la misma WiFi y accede con la IP del servidor. Crea una cuenta de usuario en Open WebUI para tener tu propio historial de conversaciones.</p>
+                    </div>
+                </div>
+                <div class="hl-info-box" style="margin-top:20px">
+                    <p><i class="fas fa-lock" style="margin-right:8px"></i>El sistema está 100% operativo en local. Sin API keys, sin costes recurrentes, sin envío de datos a terceros. La privacidad es la característica principal, no un extra.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <footer id="contacto" style="margin-left:58px">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">IZAN<span>.</span></div>
+                    <p>Administrador de Sistemas y Especialista en Ciberseguridad con enfoque en soluciones robustas, seguras y automatizadas.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Izan1706" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/izan-rodriguez-a35652295/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:izanro06@gmail.com" onclick="handleContactClick(event)" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> izanro06@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="./index.html#sobre-mi">Sobre mí</a></li>
+                        <li><a href="./homelab.html">HomeLab & Sistemas</a></li>
+                        <li><a href="./izanagi.html">Herramientas Propias</a></li>
+                        <li><a href="./ia_local.html">IA Local</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Systems Operational</span>
+                <span class="uptime">Uptime: 99.9%</span>
+            </div>
+            <div class="copyright">&copy; 2026 IZAN. Todos los derechos reservados.</div>
+        </div>
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24c.304-.143.662-.352 1.048-.625a11.777 11.777 0 0 0 2.517-2.453c1.678-2.195 2.961-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+            <span>SSL Secured | AES-256 Verified Connection</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scriptHomeLab.js"></script>
+</body>
+</html>

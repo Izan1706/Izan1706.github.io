@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZAN | HomeLab & Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="izan.css">
+    <link rel="stylesheet" href="stylehomelab.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+<body>
+    <div class="red-lights-container">
+        <div class="red-light-path red-light-left"></div>
+        <div class="red-light-path red-light-right"></div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./izan_eng.html">IZAN</a><span>.</span>
+            </div>
+            <div class="subtitle">Systems Administration Student | Cybersecurity</div>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="./izan_eng.html#sobre-mi" class="nav-link">About Me</a></li>
+                    <li><a href="./homelab_eng.html" class="nav-link active">HomeLab & Systems</a></li>
+                    <li><a href="./izanagi_eng.html" class="nav-link">Own Tools</a></li>
+                    <li><a href="./ia_localeng.html" class="nav-link">Local AI</a></li>
+                    <li><a href="./izan_eng.html#contacto" class="nav-link">Contact</a></li>
+                    <li class="lang-item">
+                        <a href="./homelab.html" class="nav-link lang-switch">
+                            <img src="./assets/España.webp" alt="Spanish Version" class="lang-flag">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="homelab-sidebar" id="homelab-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-header-icon"><i class="fas fa-server"></i></div>
+            <span class="sidebar-header-title">HomeLab</span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-group">
+                <a href="#homelab-general" class="sidebar-item active">
+                    <i class="fas fa-home"></i>
+                    <span>General HomeLab</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#intro" class="sidebar-subitem">↳ Introduction</a>
+                    <a href="#hardware" class="sidebar-subitem">↳ Hardware</a>
+                    <a href="#objetivo" class="sidebar-subitem">↳ Objective</a>
+                    <a href="#aporta" class="sidebar-subitem">↳ What it gives me</a>
+                    <a href="#administro" class="sidebar-subitem">↳ How I manage it</a>
+                    <a href="#estructura" class="sidebar-subitem">↳ Structure</a>
+                </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#seguridad" class="sidebar-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Security</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#futuro" class="sidebar-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Future & Updates</span>
+                </a>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#monitorizacion" class="sidebar-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Monitoring</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#netdata" class="sidebar-subitem">↳ Netdata</a>
+                    <a href="#uptime-kuma" class="sidebar-subitem">↳ Uptime Kuma</a>
+                    <a href="#disco" class="sidebar-subitem">↳ Disk Failure Alert</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <a href="#pihole" class="sidebar-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>DNS PiHole</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#immich" class="sidebar-item">
+                    <i class="fas fa-images"></i>
+                    <span>Immich Gallery</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Open menu">
+        <i class="fas fa-server"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="homelab-wrap">
+        <div class="homelab-content">
+
+            <!-- HERO -->
+            <div class="hl-hero">
+                <div class="hl-hero-badge"><i class="fas fa-circle" style="font-size:0.5rem"></i> Active Personal Project</div>
+                <h1>My Personal<br><span>HomeLab</span></h1>
+                <p>Personal server infrastructure and self-hosted services, designed to learn, experiment, and have total control over my data and technological environment.</p>
+                <div class="hl-hero-stats">
+                    <div class="hl-stat"><span class="hl-stat-val">6+</span><span class="hl-stat-lbl">Active services</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">24/7</span><span class="hl-stat-lbl">Uptime target</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">100%</span><span class="hl-stat-lbl">Local & private</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">0€</span><span class="hl-stat-lbl">Cloud subscriptions</span></div>
+                </div>
+            </div>
+
+            <!-- HOMELAB GENERAL -->
+            <section class="hl-section" id="homelab-general">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-home"></i></div>
+                    <h2>General <span>HomeLab</span></h2>
+                </div>
+
+                <div class="hl-subsection" id="intro">
+                    <div class="hl-subsection-title">Introduction</div>
+                    <p class="hl-text">A HomeLab is a personal server environment where own services are run completely locally, without relying on third parties or the cloud. In my case, I set it up as a natural extension of my project and ASIX training: if I am going to manage production systems, I first need a real lab where I can break things, fix them, and learn.</p>
+                    <p class="hl-text">The project started with the local AI project on my personal PC and I later acquired an old, limited machine to experiment, learn, and make my technological needs simpler. It now manages everything from my home network DNS to photo storage, plus continuous monitoring of all services.</p>
+                    <div class="hl-info-box">
+                        <p><i class="fas fa-info-circle" style="margin-right:8px"></i>All data stays on my local network. No service sends information to external servers. I only access from outside via VPN.</p>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="hardware">
+                    <div class="hl-subsection-title">Hardware</div>
+                    <p class="hl-text">The server is a repurposed old PC, chosen for its low power consumption but enough power to run stable, silent services 24/7 at home.</p>
+                    <table class="hw-table">
+                        <thead><tr><th>Component</th><th>Specification</th><th>Role</th></tr></thead>
+                        <tbody>
+                            <tr><td class="hw-label">CPU</td><td class="hw-val">Intel i7-4790</td><td>Main compute + virtualisation</td></tr>
+                            <tr><td class="hw-label">RAM</td><td class="hw-val">4 × 4 GB DDR3</td><td>Docker containers</td></tr>
+                            <tr><td class="hw-label">OS Storage</td><td class="hw-val">436 GB SSD Kingston</td><td>Operating system + services</td></tr>
+                            <tr><td class="hw-label">Network</td><td class="hw-val">Gigabit Ethernet</td><td>Main connectivity</td></tr>
+                            <tr><td class="hw-label">Operating System</td><td class="hw-val">Ubuntu Server 24.04 LTS</td><td>Main host</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="hl-tag-list">
+                        <span class="hl-tag">Ubuntu 24.04 LTS</span>
+                        <span class="hl-tag">Docker + Compose</span>
+                        <span class="hl-tag green">24/7 Online</span>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="objetivo">
+                    <div class="hl-subsection-title">Objective</div>
+                    <p class="hl-text">The main objective of the HomeLab is threefold:</p>
+                    <div class="hl-services-grid">
+                        <div class="hl-card">
+                            <h4><i class="fas fa-graduation-cap" style="color:#2962FF;margin-right:8px"></i>Hands-on learning</h4>
+                            <p class="hl-text">Replicating real production environments to practise systems administration, networking, and cybersecurity before facing them in the workplace.</p>
+                        </div>
+                        <div class="hl-card">
+                            <h4><i class="fas fa-lock" style="color:#00E676;margin-right:8px"></i>Data sovereignty</h4>
+                            <p class="hl-text">Eliminating dependency on cloud services (Google Photos, Dropbox...) while maintaining total control over my personal data.</p>
+                        </div>
+                        <div class="hl-card">
+                            <h4><i class="fas fa-flask" style="color:#FFC107;margin-right:8px"></i>Experimentation</h4>
+                            <p class="hl-text">Having a safe environment to test new technologies, advanced network configurations, and projects without fear of breaking anything critical.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="aporta">
+                    <div class="hl-subsection-title">What does it give me?</div>
+                    <p class="hl-text">Managing a personal HomeLab is building skills that are hard to learn in a classroom:</p>
+                    <div class="hl-services-grid">
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fas fa-network-wired"></i></div>
+                                <h4>Real networking</h4>
+                            </div>
+                            <p>DNS, DHCP, firewall rules — things configured for real, with real consequences if something fails.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fab fa-docker"></i></div>
+                                <h4>Docker in production</h4>
+                            </div>
+                            <p>Deployment, updating, and maintenance of containers, compose files, volumes, and networking between services.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fas fa-shield-alt"></i></div>
+                                <h4>Applied security</h4>
+                            </div>
+                            <p>Service hardening, audit logs, and local SSL certificates.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fas fa-tools"></i></div>
+                                <h4>Troubleshooting</h4>
+                            </div>
+                            <p>Real fault diagnosis, log analysis, network problem debugging, and hardware failure recovery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="administro">
+                    <div class="hl-subsection-title">How do I manage it?</div>
+                    <p class="hl-text">Administration is primarily done from the terminal via SSH, complemented by web interfaces for the more visual services:</p>
+                    <div class="hl-code"><span class="comment"># Access to main server</span><br>
+<span class="cmd">ssh</span> izan@homelab.local -p 22<br><br>
+<span class="comment"># Check Docker container status</span><br>
+<span class="cmd">docker ps --format</span> "table {{.Names}}\t{{.Status}}\t{{.Ports}}"<br><br>
+<span class="comment"># Update all services</span><br>
+<span class="cmd">docker compose pull && docker compose up -d</span></div>
+                    <div class="hl-tag-list">
+                        <span class="hl-tag">SSH</span>
+                        <span class="hl-tag">Docker Compose</span>
+                        <span class="hl-tag">Cron Jobs</span>
+                        <span class="hl-tag">Bash Scripts</span>
+                        <span class="hl-tag">Portainer</span>
+                        <span class="hl-tag green">Cockpit Web</span>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="estructura">
+                    <div class="hl-subsection-title">Network structure</div>
+                    <p class="hl-text">The home network is segmented to isolate the server from other devices, with the server acting as DNS server for the entire local network:</p>
+                    <div class="hl-diagram-box">
+                        <svg width="100%" viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;display:block;margin:0 auto">
+                            <rect x="290" y="10" width="120" height="44" rx="8" fill="#0d0d0d" stroke="#2962FF" stroke-width="1.5"/>
+                            <text x="350" y="37" fill="#fff" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" font-weight="600">Internet</text>
+                            <line x1="350" y1="54" x2="350" y2="90" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="350,94 345,84 355,84" fill="#C2B280"/>
+                            <rect x="270" y="94" width="160" height="44" rx="8" fill="#0d0d0d" stroke="#2962FF" stroke-width="1.5"/>
+                            <text x="350" y="121" fill="#fff" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" font-weight="600">Router / Gateway</text>
+                            <line x1="270" y1="116" x2="160" y2="160" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="156,164 152,153 163,156" fill="#C2B280"/>
+                            <line x1="350" y1="138" x2="350" y2="170" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="350,174 345,164 355,164" fill="#C2B280"/>
+                            <line x1="430" y1="116" x2="540" y2="160" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="544,164 537,156 548,153" fill="#C2B280"/>
+                            <rect x="80" y="168" width="160" height="44" rx="8" fill="#1a1a1a" stroke="#00E676" stroke-width="1.5"/>
+                            <text x="160" y="190" fill="#00E676" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" font-weight="700">🖥 Server</text>
+                            <text x="160" y="204" fill="#777" font-family="Courier New,monospace" font-size="10" text-anchor="middle">Ubuntu Server 24.04</text>
+                            <rect x="270" y="178" width="160" height="34" rx="8" fill="#111" stroke="#2e2e2e" stroke-width="1.5"/>
+                            <text x="350" y="199" fill="#B0B0B0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle">Switch</text>
+                            <line x1="350" y1="212" x2="350" y2="245" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="350,250 345,240 355,240" fill="#C2B280"/>
+                            <rect x="270" y="254" width="160" height="34" rx="8" fill="#111" stroke="#2e2e2e" stroke-width="1.5"/>
+                            <text x="350" y="275" fill="#B0B0B0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle">PCs / Laptops</text>
+                            <rect x="460" y="168" width="160" height="44" rx="8" fill="#111" stroke="#2e2e2e" stroke-width="1.5"/>
+                            <text x="540" y="195" fill="#B0B0B0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle">Phones / IoT</text>
+                            <line x1="160" y1="212" x2="160" y2="246" stroke="#C2B280" stroke-width="1.5" stroke-dasharray="4,3"/>
+                            <polygon points="160,250 155,240 165,240" fill="#C2B280"/>
+                            <rect x="65" y="254" width="90" height="34" rx="6" fill="#111" stroke="#2962FF33" stroke-width="1"/>
+                            <text x="112" y="275" fill="#aac4ff" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">PiHole</text>
+                            <rect x="165" y="254" width="90" height="34" rx="6" fill="#111" stroke="#2962FF33" stroke-width="1"/>
+                            <text x="210" y="275" fill="#aac4ff" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Immich</text>
+                            <rect x="115" y="295" width="90" height="34" rx="6" fill="#111" stroke="#2962FF33" stroke-width="1"/>
+                            <text x="160" y="315" fill="#aac4ff" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Netdata</text>
+                        </svg>
+                    </div>
+                    <div class="hl-info-box" style="margin-top:16px">
+                        <p><i class="fas fa-info-circle" style="margin-right:8px"></i>The server acts as the primary DNS for the entire network, filtering ads and malicious domains via PiHole before resolving any query.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECURITY -->
+            <section class="hl-section" id="seguridad">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h2>Security</h2>
+                </div>
+                <p class="hl-text">Security is a priority in the HomeLab. I implemented measures such as firewall, network monitoring, and regular updates to protect all services. Additionally, I perform periodic audits using NMAP and Lynis after every major change.</p>
+                <div class="hl-subsection">
+                    <div class="hl-subsection-title">Lynis — Security Auditing</div>
+                    <p class="hl-text">Lynis is a security auditing tool I use to evaluate my system's configuration. It scans the system and provides a detailed report with a score and recommendations to improve security. It is an essential tool for keeping the HomeLab secure and protected against potential threats.</p>
+                    <img src="./assets/lynis.png" alt="Lynis audit output" class="hl-service-image" style="max-width:400px;margin:16px auto;display:block">
+                    <div class="hl-tag-list">
+                        <span class="hl-tag">Lynis</span>
+                        <span class="hl-tag">NMAP</span>
+                        <span class="hl-tag">UFW Firewall</span>
+                        <span class="hl-tag">SSH Hardening</span>
+                        <span class="hl-tag green">Periodic Auditing</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FUTURE -->
+            <section class="hl-section" id="futuro">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-rocket"></i></div>
+                    <h2>Future <span>& Updates</span></h2>
+                </div>
+                <p class="hl-text">The HomeLab is constantly evolving. Here is a short list of projects I plan to add in the future.</p>
+                <div class="hl-timeline">
+                    <div class="hl-timeline-item">
+                        <div class="hl-timeline-title">Immich security and capacity separation</div>
+                        <div class="hl-timeline-desc">Full migration from Google Photos to self-hosted Immich. Automated backup and RAID 1 for data protection.</div>
+                    </div>
+                    <div class="hl-timeline-item">
+                        <div class="hl-timeline-title">NAS creation</div>
+                        <div class="hl-timeline-desc">Separate bay with 3 or more isolated disks to create a RAID system and large storage.</div>
+                    </div>
+                    <div class="hl-timeline-item">
+                        <div class="hl-timeline-title">Security camera system</div>
+                        <div class="hl-timeline-desc">Installation of security cameras in a secure and stable manner, accessible via ethernet.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">WireGuard VPN</div>
+                        <div class="hl-timeline-desc">Secure remote access to all HomeLab services from anywhere via self-hosted WireGuard VPN, replacing my current VPN service.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Second node (Raspberry Pi 5)</div>
+                        <div class="hl-timeline-desc">Adding a second low-power server as a secondary node for high availability of critical services like PiHole.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Local AI evolution</div>
+                        <div class="hl-timeline-desc">Integration of more specialised AI hardware (NVIDIA Orin or similar) to avoid using my main PC as the inference machine.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MONITORING -->
+            <section class="hl-section" id="monitorizacion">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-chart-line"></i></div>
+                    <h2><span>Monitoring</span></h2>
+                </div>
+                <p class="hl-text">Monitoring is a critical part of any infrastructure. The HomeLab uses three complementary layers: real-time metrics, service availability checks, and hardware alerts.</p>
+
+                <div class="hl-subsection" id="netdata">
+                    <div class="hl-subsection-title">Netdata</div>
+                    <p class="hl-text">Netdata is the real-time monitoring engine for the server. With 1-second resolution, it captures CPU, RAM, disk, network, temperature, and process metrics for all Docker containers.</p>
+                    <div class="hl-services-grid">
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(0,230,118,0.1)"><i class="fas fa-microchip" style="color:#00E676"></i></div>
+                                <h4>System metrics</h4>
+                            </div>
+                            <p>Per-core CPU usage, RAM, disk I/O, component temperature, and system load in real time.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(0,230,118,0.1)"><i class="fab fa-docker" style="color:#00E676"></i></div>
+                                <h4>Docker containers</h4>
+                            </div>
+                            <p>Per-container CPU and RAM usage, health check status, and automatic detection of abnormal resource consumption.</p>
+                        </div>
+                    </div>
+                    <div class="hl-code"><span class="comment"># Deploy Netdata with Docker support</span><br>
+docker run -d --name=netdata \<br>
+&nbsp;&nbsp;--pid=host --network=host \<br>
+&nbsp;&nbsp;-v netdataconfig:/etc/netdata \<br>
+&nbsp;&nbsp;-v netdatalib:/var/lib/netdata \<br>
+&nbsp;&nbsp;-v /etc/passwd:/host/etc/passwd:ro \<br>
+&nbsp;&nbsp;-v /var/run/docker.sock:/var/run/docker.sock:ro \<br>
+&nbsp;&nbsp;--cap-add SYS_PTRACE \<br>
+&nbsp;&nbsp;--security-opt apparmor=unconfined \<br>
+&nbsp;&nbsp;netdata/netdata</div>
+                    <span class="hl-status-badge online" style="margin-top:0"><span class="dot"></span>Active — Port 19999</span>
+                </div>
+
+                <div class="hl-subsection" id="uptime-kuma">
+                    <div class="hl-subsection-title">Uptime Kuma</div>
+                    <p class="hl-text">Uptime Kuma checks every 60 seconds that all services are responding correctly.</p>
+                    <div class="hl-services-grid">
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon"><i class="fas fa-heartbeat"></i></div>
+                                <h4>Monitored services</h4>
+                            </div>
+                            <p>PiHole, Immich, Netdata, Ollama, and Open WebUI. Real-time status with automatic alerts.</p>
+                            <span class="hl-status-badge online"><span class="dot"></span>Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="disco">
+                    <div class="hl-subsection-title">Disk Failure Alert (S.M.A.R.T.)</div>
+                    <p class="hl-text">Disks are monitored with <strong style="color:#fff">smartmontools</strong>. A daily cron script analyses the S.M.A.R.T. status of each disk and sends an email alert if it detects bad sectors, read errors, or elevated temperature.</p>
+                    <div class="hl-warn-box">
+                        <p><i class="fas fa-exclamation-triangle" style="margin-right:8px"></i>HDDs have an elevated failure rate after 3-5 years. S.M.A.R.T. monitoring allows detecting imminent failures before data is lost.</p>
+                    </div>
+                    <div class="hl-tag-list">
+                        <span class="hl-tag">smartmontools</span>
+                        <span class="hl-tag">daily cron</span>
+                        <span class="hl-tag">Email alerts</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PIHOLE -->
+            <section class="hl-section" id="pihole">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h2>DNS <span>PiHole</span></h2>
+                </div>
+                <p class="hl-text">PiHole acts as the DNS server for the entire home network, intercepting requests to advertising, tracking, and malware domains before they reach devices. With blocklists updated automatically every week, it filters between 20% and 40% of total DNS traffic.</p>
+                <div class="hl-services-grid">
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon" style="background:rgba(255,65,54,0.1)"><i class="fas fa-ban" style="color:#FF4136"></i></div>
+                            <h4>Ad blocking</h4>
+                        </div>
+                        <p>Network-level ad blocking for all connected devices: PCs, phones, Smart TVs, and consoles — no installation needed on each device.</p>
+                        <span class="hl-status-badge online"><span class="dot"></span>~25% requests blocked</span>
+                    </div>
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon" style="background:rgba(0,230,118,0.1)"><i class="fas fa-server" style="color:#00E676"></i></div>
+                            <h4>Custom local DNS</h4>
+                        </div>
+                        <p>Local DNS records to access HomeLab services with friendly names: <code style="color:#00E676">immich.local</code>, <code style="color:#00E676">netdata.local</code>...</p>
+                        <span class="hl-status-badge online"><span class="dot"></span>12 local records</span>
+                    </div>
+                </div>
+                <div class="hl-code" style="margin-top:20px"><span class="comment"># docker-compose.yml — PiHole</span><br>
+services:<br>
+&nbsp;&nbsp;pihole:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;image: pihole/pihole:latest<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ports:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "53:53/tcp"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "53:53/udp"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "8053:80/tcp"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;environment:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TZ: 'Europe/Madrid'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WEBPASSWORD: '**********'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;volumes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- './etc-pihole:/etc/pihole'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- './etc-dnsmasq.d:/etc/dnsmasq.d'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restart: unless-stopped</div>
+            </section>
+
+            <!-- IMMICH -->
+            <section class="hl-section" id="immich">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-images"></i></div>
+                    <h2>Immich <span>Gallery</span></h2>
+                </div>
+                <p class="hl-text">Immich is the self-hosted alternative to Google Photos I use to store and manage all my photos and videos. The mobile app automatically backs up in real time to my server, and none of my photos ever pass through third-party servers again.</p>
+                <div class="hl-info-box">
+                    <p><i class="fas fa-info-circle" style="margin-right:8px"></i>Immich includes AI-powered facial recognition, content-based search, automatic album generation, and a location map — all running locally.</p>
+                </div>
+                <div class="hl-services-grid" style="margin-top:20px">
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon" style="background:rgba(255,193,7,0.1)"><i class="fas fa-mobile-alt" style="color:#FFC107"></i></div>
+                            <h4>Automatic backup</h4>
+                        </div>
+                        <p>The Immich Android app automatically backs up every new photo and video as soon as the phone connects to the home WiFi.</p>
+                        <span class="hl-status-badge online"><span class="dot"></span>Sync active</span>
+                    </div>
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon" style="background:rgba(0,230,118,0.1)"><i class="fas fa-brain" style="color:#00E676"></i></div>
+                            <h4>Integrated local AI</h4>
+                        </div>
+                        <p>Facial recognition, object classification, and semantic search (search for "beach 2024") using AI models that run on the server itself.</p>
+                        <span class="hl-status-badge online"><span class="dot"></span>Machine Learning active</span>
+                    </div>
+                </div>
+                <p style="color:#444;font-size:0.8rem;text-align:center;margin-top:12px">Private gallery — not publicly available</p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contacto" style="margin-left:58px">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">IZAN<span>.</span></div>
+                    <p>Systems Administrator and Cybersecurity Specialist focused on robust, secure, and automated solutions.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Izan1706" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/izan-rodriguez-a35652295/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:izanro06@gmail.com" onclick="handleContactClick(event)" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> izanro06@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barcelona, Spain</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./izan_eng.html#sobre-mi">About Me</a></li>
+                        <li><a href="./homelab_eng.html">HomeLab & Systems</a></li>
+                        <li><a href="./izanagi_eng.html">Own Tools</a></li>
+                        <li><a href="./ia_localeng.html">Local AI</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Systems Operational</span>
+                <span class="uptime">Uptime: 99.9%</span>
+            </div>
+            <div class="copyright">&copy; 2026 IZAN. All rights reserved.</div>
+        </div>
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24c.304-.143.662-.352 1.048-.625a11.777 11.777 0 0 0 2.517-2.453c1.678-2.195 2.961-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+            <span>SSL Secured | AES-256 Verified Connection</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scriptHomeLab.js"></script>
+</body>
+</html>
