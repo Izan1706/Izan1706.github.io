@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZAN | Izanagi Portal & Kanban</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./izan.css">
+    <link rel="stylesheet" href="stylehomelab.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+<body>
+    <div class="red-lights-container">
+        <div class="red-light-path red-light-left"></div>
+        <div class="red-light-path red-light-right"></div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./izan_eng.html">IZAN</a><span>.</span>
+            </div>
+            <div class="subtitle">Systems Administration Student | Cybersecurity</div>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="./izan_eng.html#sobre-mi" class="nav-link">About Me</a></li>
+                    <li><a href="./homelab_eng.html" class="nav-link">HomeLab & Systems</a></li>
+                    <li><a href="./izanagi_eng.html" class="nav-link active">Own Tools</a></li>
+                    <li><a href="./ia_localeng.html" class="nav-link">Local AI</a></li>
+                    <li><a href="./izan_eng.html#contacto" class="nav-link">Contact</a></li>
+                    <li class="lang-item">
+                        <a href="./izanagi.html" class="nav-link lang-switch">
+                            <img src="./assets/España.webp" alt="Spanish Version" class="lang-flag">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="homelab-sidebar" id="homelab-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-header-icon"><i class="fas fa-code"></i></div>
+            <span class="sidebar-header-title">Izanagi</span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-group">
+                <a href="#intro" class="sidebar-item active">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Introduction</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#stack" class="sidebar-item">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Tech Stack</span>
+                </a>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#dashboard" class="sidebar-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Portal / Dashboard</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#dashboard-features" class="sidebar-subitem">↳ Features</a>
+                    <a href="#dashboard-tech" class="sidebar-subitem">↳ Implementation</a>
+                </div>
+            </div>
+            <div class="sidebar-group">
+                <a href="#kanban" class="sidebar-item">
+                    <i class="fas fa-columns"></i>
+                    <span>Kanban Board</span>
+                </a>
+                <div class="sidebar-sub">
+                    <a href="#kanban-features" class="sidebar-subitem">↳ Features</a>
+                    <a href="#kanban-tech" class="sidebar-subitem">↳ Implementation</a>
+                </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-group">
+                <a href="#capturas" class="sidebar-item">
+                    <i class="fas fa-camera"></i>
+                    <span>Screenshots</span>
+                </a>
+            </div>
+            <div class="sidebar-group">
+                <a href="#futuro" class="sidebar-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Upcoming Features</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Open menu">
+        <i class="fas fa-code"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="homelab-wrap">
+        <div class="homelab-content">
+
+            <!-- HERO -->
+            <div class="hl-hero">
+                <div class="hl-hero-badge"><i class="fas fa-circle" style="font-size:0.5rem"></i> Own Development — Native Stack</div>
+                <h1>Izanagi <span>Portal</span><br>& Kanban Board</h1>
+                <p>Productivity tool ecosystem built entirely from scratch. No frameworks, no external libraries. Completely native stack with Node.js, HTML5, CSS3, and vanilla JavaScript.</p>
+                <div class="hl-hero-stats">
+                    <div class="hl-stat"><span class="hl-stat-val">2</span><span class="hl-stat-lbl">Tools</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">5</span><span class="hl-stat-lbl">Kanban columns</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">0</span><span class="hl-stat-lbl">External dependencies</span></div>
+                    <div class="hl-stat"><span class="hl-stat-val">100%</span><span class="hl-stat-lbl">Own development</span></div>
+                </div>
+            </div>
+
+            <!-- INTRODUCTION -->
+            <section class="hl-section" id="intro">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-info-circle"></i></div>
+                    <h2>Introduction <span>& Purpose</span></h2>
+                </div>
+                <p class="hl-text">The Izanagi Portal is an own-tools ecosystem born from a concrete need: a centralised control panel for homelab services and a task manager adapted to a real technical workflow, without depending on Jira, Notion, or any third-party platform.</p>
+                <p class="hl-text">The decision to build it with a native stack (no React, no Vue, no jQuery) was deliberate. The goal was to demonstrate that with vanilla HTML, CSS, and JavaScript, plus a lightweight Node.js backend, it is possible to build a functional, fast, and maintainable tool that replicates the experience of production tools like Jira or Trello.</p>
+                <div class="hl-info-box">
+                    <p><i class="fas fa-lightbulb" style="margin-right:8px"></i>This project demonstrates deep understanding of web fundamentals: DOM manipulation, event handling, localStorage, fetch API, and client-server architecture from scratch.</p>
+                </div>
+                <div class="hl-tag-list" style="margin-top:16px">
+                    <span class="hl-tag">Node.js</span>
+                    <span class="hl-tag">Vanilla JavaScript</span>
+                    <span class="hl-tag">HTML5</span>
+                    <span class="hl-tag">CSS3</span>
+                    <span class="hl-tag green">Zero external dependencies</span>
+                </div>
+            </section>
+
+            <!-- TECH STACK -->
+            <section class="hl-section" id="stack">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-layer-group"></i></div>
+                    <h2>Tech <span>Stack</span></h2>
+                </div>
+                <div class="hl-services-grid">
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon"><i class="fab fa-node-js"></i></div>
+                            <h4>Backend — Node.js</h4>
+                        </div>
+                        <p>Native HTTP server that exposes a REST API for reading system metrics (CPU, RAM) and serving static files. No Express, no frameworks.</p>
+                    </div>
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon"><i class="fab fa-js-square"></i></div>
+                            <h4>Frontend — Vanilla JS</h4>
+                        </div>
+                        <p>All interactivity implemented in pure JavaScript: drag & drop, modals, localStorage persistence, and DOM updates without any framework.</p>
+                    </div>
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon"><i class="fab fa-css3-alt"></i></div>
+                            <h4>Design — CSS3 + Variables</h4>
+                        </div>
+                        <p>Own design system based on CSS custom properties. Switchable light/dark theme, glassmorphism, and responsive design without CSS frameworks.</p>
+                    </div>
+                    <div class="hl-service-card">
+                        <div class="hl-service-card-head">
+                            <div class="hl-service-icon"><i class="fas fa-database"></i></div>
+                            <h4>Persistence — localStorage</h4>
+                        </div>
+                        <p>Dashboard services and Kanban tasks are persisted in browser localStorage. Data survives page reloads without needing a database.</p>
+                    </div>
+                </div>
+                <div class="hl-code" style="margin-top:20px"><span class="comment"># Project structure</span><br>
+izanagi/<br>
+├── server.js<span class="comment">          # Node.js backend — metrics API + static server</span><br>
+├── index.html<span class="comment">        # Main portal / dashboard</span><br>
+├── tareas.html<span class="comment">       # Kanban Board</span><br>
+├── style.css<span class="comment">         # Shared portal styles</span><br>
+├── style_tareas.css<span class="comment">  # Kanban-specific styles</span><br>
+├── script.js<span class="comment">         # Dashboard logic</span><br>
+└── script_tareas.js<span class="comment">  # Kanban logic (drag & drop, CRUD)</span></div>
+            </section>
+
+            <!-- DASHBOARD -->
+            <section class="hl-section" id="dashboard">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-th-large"></i></div>
+                    <h2>Portal <span>/ Dashboard</span></h2>
+                </div>
+                <p class="hl-text">The portal is the home page of the Izanagi ecosystem. It centralises access to all homelab services in a visual card grid, with real-time server metrics displayed in the top bar.</p>
+
+                <div class="hl-subsection" id="dashboard-features">
+                    <div class="hl-subsection-title">Features</div>
+                    <div class="hl-services-grid">
+                        <div class="hl-card">
+                            <h4><i class="fas fa-tachometer-alt" style="color:#2962FF;margin-right:8px"></i>Real-time metrics</h4>
+                            <p class="hl-text">The top bar displays CPU% and RAM% updated every 5 seconds via requests to the Node.js backend API.</p>
+                        </div>
+                        <div class="hl-card">
+                            <h4><i class="fas fa-plus-circle" style="color:#00E676;margin-right:8px"></i>Service management</h4>
+                            <p class="hl-text">Add, edit, or remove services via a modal. Each service has a name, URL, and customisable SVG icon. Everything persists in localStorage.</p>
+                        </div>
+                        <div class="hl-card">
+                            <h4><i class="fas fa-moon" style="color:#FFC107;margin-right:8px"></i>Light / dark theme</h4>
+                            <p class="hl-text">Switchable theme toggle with a button. The preference is saved in localStorage and applied automatically on the next visit.</p>
+                        </div>
+                        <div class="hl-card">
+                            <h4><i class="fas fa-external-link-alt" style="color:#FF4136;margin-right:8px"></i>Direct access</h4>
+                            <p class="hl-text">Each service card opens the service URL directly in a new tab. One click = immediate access to any homelab tool.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="dashboard-tech">
+                    <div class="hl-subsection-title">Technical implementation</div>
+                    <div class="hl-code"><span class="comment">// Fetch system metrics from Node.js API</span><br>
+async function fetchMetrics() {<br>
+&nbsp;&nbsp;const res = await fetch('/api/metrics');<br>
+&nbsp;&nbsp;const data = await res.json();<br>
+&nbsp;&nbsp;document.getElementById('cpu-metric').textContent = `CPU: ${data.cpu}%`;<br>
+&nbsp;&nbsp;document.getElementById('ram-metric').textContent = `RAM: ${data.ram}%`;<br>
+}<br>
+setInterval(fetchMetrics, 5000);<br><br>
+<span class="comment">// Persist services to localStorage</span><br>
+function saveServices(services) {<br>
+&nbsp;&nbsp;localStorage.setItem('izanagi-services', JSON.stringify(services));<br>
+}</div>
+                    <span class="hl-status-badge online" style="margin-top:16px"><span class="dot"></span>Served at http://izanagi.local</span>
+                </div>
+            </section>
+
+            <!-- KANBAN -->
+            <section class="hl-section" id="kanban">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-columns"></i></div>
+                    <h2>Kanban <span>Board</span></h2>
+                </div>
+                <p class="hl-text">The Kanban Board is a task manager with 5 columns adapted to the real workflow of technical and infrastructure projects. Cards can be dragged between columns using native drag & drop.</p>
+
+                <div class="hl-subsection" id="kanban-features">
+                    <div class="hl-subsection-title">Columns and workflow</div>
+                    <div class="hl-services-grid">
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(176,176,176,0.1)"><i class="fas fa-inbox" style="color:#B0B0B0"></i></div>
+                                <h4>To Do</h4>
+                            </div>
+                            <p>Pending tasks yet to be started. Project and idea backlog.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(41,98,255,0.1)"><i class="fas fa-spinner" style="color:#2962FF"></i></div>
+                                <h4>In Progress</h4>
+                            </div>
+                            <p>Active tasks currently being worked on.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(255,193,7,0.1)"><i class="fas fa-pause-circle" style="color:#FFC107"></i></div>
+                                <h4>Paused</h4>
+                            </div>
+                            <p>Temporarily blocked tasks waiting for resources or decisions.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(156,39,176,0.1)"><i class="fas fa-file-alt" style="color:#9C27B0"></i></div>
+                                <h4>Documentation</h4>
+                            </div>
+                            <p>Exclusive column for writing tasks, technical documentation, and writeups.</p>
+                        </div>
+                        <div class="hl-service-card">
+                            <div class="hl-service-card-head">
+                                <div class="hl-service-icon" style="background:rgba(0,230,118,0.1)"><i class="fas fa-check-circle" style="color:#00E676"></i></div>
+                                <h4>Done</h4>
+                            </div>
+                            <p>Completed tasks. History of finished work.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hl-subsection" id="kanban-tech">
+                    <div class="hl-subsection-title">Technical implementation</div>
+                    <p class="hl-text">Drag & drop was implemented using the native HTML5 Drag and Drop API, without external libraries. Cards are draggable and each column is a drop target that updates the task status:</p>
+                    <div class="hl-code"><span class="comment">// Native HTML5 Drag & Drop</span><br>
+function allowDrop(event) { event.preventDefault(); }<br><br>
+function drop(event) {<br>
+&nbsp;&nbsp;event.preventDefault();<br>
+&nbsp;&nbsp;const taskId = event.dataTransfer.getData('text/plain');<br>
+&nbsp;&nbsp;const targetColumn = event.currentTarget.dataset.status;<br>
+&nbsp;&nbsp;updateTaskStatus(taskId, targetColumn);<br>
+&nbsp;&nbsp;renderBoard();<br>
+}<br><br>
+<span class="comment">// Full CRUD persisted in localStorage</span><br>
+function saveTask(task) {<br>
+&nbsp;&nbsp;const tasks = getTasks();<br>
+&nbsp;&nbsp;const idx = tasks.findIndex(t => t.id === task.id);<br>
+&nbsp;&nbsp;idx >= 0 ? tasks[idx] = task : tasks.push(task);<br>
+&nbsp;&nbsp;localStorage.setItem('kanban-tasks', JSON.stringify(tasks));<br>
+}</div>
+                    <div class="hl-info-box" style="margin-top:12px">
+                        <p><i class="fas fa-mobile-alt" style="margin-right:8px"></i>The Kanban is fully responsive. On small screens, columns stack vertically to maintain mobile usability.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCREENSHOTS -->
+            <section class="hl-section" id="capturas">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-camera"></i></div>
+                    <h2>Screenshots</h2>
+                </div>
+                <p class="hl-text">The portal and Kanban running live on the homelab, accessed from the local network at <code style="color:#00E676">http://izanagi.local</code>:</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px">
+                    <div>
+                        <p style="color:#B0B0B0;font-size:0.85rem;margin-bottom:8px">Portal / Dashboard — homelab services</p>
+                        <img src="./assets/homepage.png" alt="Izanagi Portal Dashboard" style="width:100%;border-radius:8px;border:1px solid #2E2E2E">
+                    </div>
+                    <div>
+                        <p style="color:#B0B0B0;font-size:0.85rem;margin-bottom:8px">Kanban Board — task management</p>
+                        <img src="./assets/kanban.png" alt="Izanagi Kanban Board" style="width:100%;border-radius:8px;border:1px solid #2E2E2E">
+                    </div>
+                </div>
+            </section>
+
+            <!-- UPCOMING FEATURES -->
+            <section class="hl-section" id="futuro">
+                <div class="hl-section-header">
+                    <div class="hl-section-icon"><i class="fas fa-rocket"></i></div>
+                    <h2>Upcoming <span>Features</span></h2>
+                </div>
+                <p class="hl-text">The Izanagi ecosystem evolves with new ideas. Here are the planned improvements:</p>
+                <div class="hl-timeline">
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Real backend persistence</div>
+                        <div class="hl-timeline-desc">Migrate storage from localStorage to an SQLite database served by the Node.js backend, enabling cross-device persistence.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Labels and priorities in Kanban</div>
+                        <div class="hl-timeline-desc">Add a colour label system and priority levels (High, Medium, Low) to Kanban cards.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Service status checking</div>
+                        <div class="hl-timeline-desc">Automatic ping to each dashboard service URL to display a visual online/offline indicator on each card.</div>
+                    </div>
+                    <div class="hl-timeline-item planned">
+                        <div class="hl-timeline-title">Historical metrics charts</div>
+                        <div class="hl-timeline-desc">Store and display CPU and RAM history over time in charts generated with the native Canvas API.</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contacto" style="margin-left:58px">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">IZAN<span>.</span></div>
+                    <p>Systems Administrator and Cybersecurity Specialist focused on robust, secure, and automated solutions.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Izan1706" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/izan-rodriguez-a35652295/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:izanro06@gmail.com" onclick="handleContactClick(event)" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> izanro06@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barcelona, Spain</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./izan_eng.html#sobre-mi">About Me</a></li>
+                        <li><a href="./homelab_eng.html">HomeLab & Systems</a></li>
+                        <li><a href="./izanagi_eng.html">Own Tools</a></li>
+                        <li><a href="./ia_localeng.html">Local AI</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Systems Operational</span>
+                <span class="uptime">Uptime: 99.9%</span>
+            </div>
+            <div class="copyright">&copy; 2026 IZAN. All rights reserved.</div>
+        </div>
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24c.304-.143.662-.352 1.048-.625a11.777 11.777 0 0 0 2.517-2.453c1.678-2.195 2.961-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+            <span>SSL Secured | AES-256 Verified Connection</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="scriptHomeLab.js"></script>
+</body>
+</html>
