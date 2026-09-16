@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novacreux | IZAN — Homelab, Edge AI e IA Generativa en Local</title>
+    <meta name="description" content="Novacreux: ecosistema de homelab, IA generativa en local y Edge AI desplegado sobre 5 plataformas de hardware distintas. Proyecto Final de Grado ASIX de Izan Rodríguez y Óscar Toledo.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="izan.css">
+    <link rel="stylesheet" href="novacreux.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="red-lights-container">
+        <div class="red-light-path red-light-left"></div>
+        <div class="red-light-path red-light-right"></div>
+    </div>
+
+    <!-- ===== CABECERA ===== -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./index.html">IZAN</a><span>.</span>
+            </div>
+
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="./index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="./homelab.html" class="nav-link">HomeLab & Sistemas</a></li>
+                    <li><a href="./novacreux.html" class="nav-link active">Novacreux</a></li>
+                    <li><a href="./izanagi.html" class="nav-link">Herramientas Propias</a></li>
+                    <li><a href="./ia_local.html" class="nav-link">IA Local</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="lang-item">
+                        <a href="./novacreux_eng.html" class="nav-link lang-switch">
+                            <img src="./assets/UK.jpg" alt="English Version" class="lang-flag">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DE PROYECTO ===== -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="./index.html">Inicio</a>
+                <span class="sep">/</span>
+                <a href="./index.html#proyectos">Proyectos</a>
+                <span class="sep">/</span>
+                <span class="current">Novacreux</span>
+            </div>
+
+            <div class="project-hero-eyebrow">Proyecto Final de Grado · ASIX 2025-2026</div>
+            <h1 class="project-hero-title">NOVACREUX</h1>
+            <p class="project-hero-desc">
+                Ecosistema tecnológico modular que lleva la IA generativa, la automatización y la seguridad a
+                <span class="highlight"> 5 plataformas de hardware distintas</span>: un homelab autoalojado,
+                un PC con GPU dedicada, una Raspberry Pi con acelerador de IA, una NVIDIA Spark y una NVIDIA
+                Jetson Orin Nano. Todo funcionando en local, sin depender de servicios de pago de terceros. Nada mas seguro que tener todo en tu casa.
+            </p>
+
+            <div class="project-hero-tags">
+                <span class="tag">Homelab & Docker</span>
+                <span class="tag">IA Generativa Local</span>
+                <span class="tag">Edge AI</span>
+                <span class="tag">n8n & RAG</span>
+                <span class="tag">NVIDIA Jetson / Spark</span>
+                <span class="tag">Ciberseguridad</span>
+            </div>
+
+            <div class="project-hero-actions">
+                <a href="./assets/Novacreux_TFG.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf"></i>&nbsp; Ver memoria completa (121 pág.)</a>
+                <a href="#arquitectura" class="btn btn-outline"><i class="fas fa-diagram-project"></i>&nbsp; Ver arquitectura</a>
+            </div>
+
+            <div class="coauthor-note">
+                Proyecto desarrollado junto a <strong>Óscar Toledo Fernández</strong>, compañero de ASIX y
+                coautor de la memoria técnica. El homelab, la integración de n8n y la IA en local (PC) son
+                de responsabilidad principal de Izan; la Raspberry Pi + HAT AI, la NVIDIA Spark y la Jetson
+                Orin Nano se trabajaron conjuntamente.
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card nv-animate">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Plataformas de hardware</div>
+                </div>
+                <div class="stat-card nv-animate">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Servicios en producción 24/7</div>
+                </div>
+                <div class="stat-card nv-animate">
+                    <div class="stat-number">121</div>
+                    <div class="stat-label">Páginas de memoria técnica</div>
+                </div>
+                <div class="stat-card nv-animate">
+                    <div class="stat-number">0€</div>
+                    <div class="stat-label">Coste en servicios cloud de pago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESUMEN EJECUTIVO ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title nv-animate">Resumen ejecutivo</h2>
+            <div class="exec-grid">
+                <div class="exec-card nv-animate">
+                    <h3>Visión</h3>
+                    <p>
+                        Novacreux nace para cerrar la distancia entre la IA de vanguardia, la seguridad robusta
+                        y la soberanía de los datos. La premisa es simple: una empresa o un profesional no
+                        necesita ceder sus datos a terceros para beneficiarse de la IA generativa, la
+                        automatización o la monitorización avanzada — puede tenerlo todo en su propia red. Creemos que un secreto salga de un lugar seguro puede abrir una brecha de seguridad, por ello los secretos no salen de casa.
+                    </p>
+                </div>
+                <div class="exec-card nv-animate">
+                    <h3>Objetivo técnico</h3>
+                    <p>
+                        Diseñar, desplegar y documentar un mismo ecosistema de IA y automatización sobre
+                        hardware de gama muy distinta — desde una Raspberry Pi de bajo consumo hasta una
+                        NVIDIA Spark de nivel profesional — para entender qué plataforma conviene a cada caso
+                        de uso real: coste, rendimiento, consumo energético y escalabilidad. Este proyecto también demuestra que tal y como esta montado es facilmente escalable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ARQUITECTURA DEL ECOSISTEMA ===== -->
+    <section id="arquitectura" class="section">
+        <div class="container">
+            <h2 class="section-title nv-animate">Arquitectura del ecosistema</h2>
+            <p class="block-intro">
+                El proyecto se reparte en cinco bloques independientes que comparten una misma filosofía
+                (local-first, sin dependencias externas) pero resuelven necesidades distintas: infraestructura
+                base, IA de escritorio, IA embebida de bajo consumo e IA de nivel profesional.
+            </p>
+
+            <figure class="diagram-card nv-animate">
+                <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="diagram-node" x="370" y="10" width="160" height="46" rx="10"/>
+                    <text class="diagram-label" x="450" y="38" font-weight="600">NOVACREUX</text>
+
+                    <line class="diagram-line" x1="450" y1="56" x2="450" y2="90"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="90" y2="90"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="270" y2="90"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="450" y2="90"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="630" y2="90"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="810" y2="90"/>
+                    <line class="diagram-line" x1="90" y1="90" x2="90" y2="115"/>
+                    <line class="diagram-line" x1="270" y1="90" x2="270" y2="115"/>
+                    <line class="diagram-line" x1="450" y1="90" x2="450" y2="115"/>
+                    <line class="diagram-line" x1="630" y1="90" x2="630" y2="115"/>
+                    <line class="diagram-line" x1="810" y1="90" x2="810" y2="115"/>
+
+                    <rect class="diagram-node" x="15" y="115" width="170" height="60" rx="10"/>
+                    <text class="diagram-label" x="100" y="140">Homelab</text>
+                    <text class="diagram-label" x="100" y="158" font-size="11" fill="var(--text-secondary)">Docker · Ubuntu Server</text>
+
+                    <rect class="diagram-node" x="200" y="115" width="140" height="60" rx="10"/>
+                    <text class="diagram-label" x="270" y="140">IA Local (PC)</text>
+                    <text class="diagram-label" x="270" y="158" font-size="11" fill="var(--text-secondary)">RTX 4060 Ti 16GB</text>
+
+                    <rect class="diagram-node" x="380" y="115" width="140" height="60" rx="10"/>
+                    <text class="diagram-label" x="450" y="140">Raspberry Pi 5</text>
+                    <text class="diagram-label" x="450" y="158" font-size="11" fill="var(--text-secondary)">+ AI HAT+2 (Edge)</text>
+
+                    <rect class="diagram-node" x="545" y="115" width="170" height="60" rx="10"/>
+                    <text class="diagram-label" x="630" y="140">NVIDIA Spark</text>
+                    <text class="diagram-label" x="630" y="158" font-size="11" fill="var(--text-secondary)">Blackwell · hasta 128GB</text>
+
+                    <rect class="diagram-node" x="740" y="115" width="140" height="60" rx="10"/>
+                    <text class="diagram-label" x="810" y="140">Jetson Orin Nano</text>
+                    <text class="diagram-label" x="810" y="158" font-size="11" fill="var(--text-secondary)">Robótica · IoT</text>
+
+                    <line class="diagram-line" x1="270" y1="175" x2="270" y2="205"/>
+                    <rect class="diagram-node" x="150" y="205" width="240" height="50" rx="10"/>
+                    <text class="diagram-label" x="270" y="234">n8n — Agente IA con RAG</text>
+
+                    <line class="diagram-line" x1="270" y1="255" x2="270" y2="285"/>
+                    <rect class="diagram-node" x="130" y="285" width="280" height="46" rx="10" stroke="var(--accent-secondary)"/>
+                    <text class="diagram-label" x="270" y="312">izan1706.github.io (este portfolio)</text>
+                </svg>
+                <figcaption>Cinco bloques de hardware independientes, unidos por una misma filosofía: IA local, sin dependencias externas. El agente RAG de n8n conecta directamente con este mismo portfolio.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ===== BLOQUE 1: HOMELAB ===== -->
+    <section class="section">
+        <div class="container">
+            <span class="block-eyebrow">Bloque 1 · Infraestructura base</span>
+            <h2 class="section-title nv-animate">Homelab & Contenerización</h2>
+            <p class="block-intro">
+                Detrás de cualquier servicio de IA en local hace falta una infraestructura que lo sostenga.
+                Sobre un PC reutilizado (Dell OptiPlex, Intel i7-4790, 16GB RAM, SSD 436GB) corre un Ubuntu
+                Server sin interfaz gráfica, con cada servicio aislado en su propio contenedor Docker: si uno
+                falla, el resto sigue funcionando.
+            </p>
+
+            <div class="hw-block">
+                <figure class="hw-photo nv-animate">
+                    <img src="./assets/novacreux/homelab-server.jpg" alt="Servidor Dell OptiPlex usado como homelab">
+                    <figcaption>El propio servidor del homelab: hardware reutilizado, 6W de consumo medio, funcionando 24/7.</figcaption>
+                </figure>
+                <div class="nv-animate">
+                    <figure class="diagram-card" style="margin-top:0;">
+                        <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="diagram-node" x="15" y="20" width="110" height="34" rx="8"/>
+                            <text class="diagram-label" x="70" y="41" font-size="12">PC IA Local</text>
+                            <rect class="diagram-node" x="5" y="75" width="125" height="34" rx="8"/>
+                            <text class="diagram-label" x="70" y="96" font-size="12">Otros dispositivos</text>
+                            <rect class="diagram-node" x="5" y="130" width="125" height="34" rx="8"/>
+                            <text class="diagram-label" x="70" y="151" font-size="12">Otros dispositivos</text>
+
+                            <rect class="diagram-node" x="165" y="75" width="90" height="34" rx="8"/>
+                            <text class="diagram-label" x="210" y="96" font-size="12">Switch</text>
+
+                            <rect class="diagram-node" x="290" y="45" width="110" height="34" rx="8"/>
+                            <text class="diagram-label" x="345" y="66" font-size="12">Router Casa</text>
+
+                            <rect class="diagram-node" x="290" y="130" width="110" height="34" rx="8" stroke="var(--accent-secondary)"/>
+                            <text class="diagram-label" x="345" y="151" font-size="12">Homelab</text>
+
+                            <line class="diagram-line" x1="125" y1="37" x2="165" y2="87"/>
+                            <line class="diagram-line" x1="130" y1="92" x2="165" y2="92"/>
+                            <line class="diagram-line" x1="130" y1="147" x2="165" y2="97"/>
+                            <line class="diagram-line" x1="255" y1="88" x2="290" y2="62"/>
+                            <line class="diagram-line" x1="345" y1="79" x2="345" y2="130"/>
+                        </svg>
+                        <figcaption>Topología de red física del homelab (recreada de la memoria técnica).</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <p class="block-intro" style="margin-top:10px;">Servicios desplegados — pulsa cada uno para ver el detalle:</p>
+            <div class="services-grid">
+                <div class="service-card nv-animate" onclick="openModal('tailscale')">
+                    <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h4>VPN · Tailscale</h4>
+                    <p>Acceso remoto seguro a toda la red sin exponer puertos, con control de acceso y logs de auditoría.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('pihole')">
+                    <div class="service-icon"><i class="fas fa-ban"></i></div>
+                    <h4>Pi-Hole</h4>
+                    <p>DNS propio de la red doméstica: bloqueo de publicidad y dominios maliciosos, nombres locales fáciles de recordar.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('immich')">
+                    <div class="service-icon"><i class="fas fa-images"></i></div>
+                    <h4>Galería Immich</h4>
+                    <p>Alternativa autoalojada a Google Fotos, con sincronización móvil y machine learning local.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('fail2ban')">
+                    <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                    <h4>Fail2ban</h4>
+                    <p>Prevención de intrusiones por fuerza bruta: detecta patrones de login fallido y banea la IP automáticamente.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('uptimekuma')">
+                    <div class="service-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h4>Uptime Kuma</h4>
+                    <p>Monitorización visual de servicios, puertos TCP y contenedores, con alertas ante incidencias.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('netdata')">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Netdata</h4>
+                    <p>Visibilidad en tiempo real de CPU, memoria, disco y red — identifica cuellos de botella al instante.</p>
+                </div>
+                <div class="service-card nv-animate" onclick="openModal('n8n')">
+                    <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
+                    <h4>n8n</h4>
+                    <p>Orquestador de automatizaciones low-code, alternativa autoalojada y gratuita a Zapier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOQUE 2: IA LOCAL PC + AGENTE N8N ===== -->
+    <section class="section">
+        <div class="container">
+            <span class="block-eyebrow">Bloque 2 · IA de escritorio</span>
+            <h2 class="section-title nv-animate">IA Generativa en Local (PC)</h2>
+            <p class="block-intro">
+                El objetivo es demostrar que, con hardware de consumo, es posible tener flujos de trabajo de
+                IA de nivel profesional con latencia mínima y control total sobre los modelos — sin que ningún
+                dato salga de la red local. La pila corre sobre Ollama como motor de inferencia y Open WebUI
+                como interfaz, todo en contenedores Docker.
+            </p>
+
+            <div class="hw-block reverse">
+                <div class="nv-animate">
+                    <table class="spec-table">
+                        <tbody>
+                            <tr><th>Equipo</th><td>PC Personal de Izan</td></tr>
+                            <tr><th>CPU</th><td>Intel i5-13600KF</td></tr>
+                            <tr><th>RAM</th><td>2 × 8GB Kingston Fury 3200MHz</td></tr>
+                            <tr><th>GPU</th><td>Zotac NVIDIA RTX 4060 Ti — 16GB VRAM</td></tr>
+                            <tr><th>Disco</th><td>1TB NVMe M.2 Kingston</td></tr>
+                            <tr><th>Rendimiento</th><td>12–18 tokens/s con modelos de hasta 24B</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="nv-animate">
+                    <ul class="hw-specs">
+                        <li><span>Motor de inferencia</span><span>Ollama</span></li>
+                        <li><span>Interfaz</span><span>Open WebUI (Docker)</span></li>
+                        <li><span>Requisito crítico</span><span>VRAM ≥ 16GB</span></li>
+                        <li><span>SO</span><span>Linux (CUDA)</span></li>
+                        <li><span>Aislamiento</span><span>Usuarios y permisos dedicados</span></li>
+                    </ul>
+                </div>
+            </div>
+
+    <!-- ===== BLOQUE 3: RASPBERRY PI + HAT AI ===== -->
+    <section class="section">
+        <div class="container">
+            <span class="block-eyebrow">Bloque 3 · Edge AI de bajo consumo</span>
+            <h2 class="section-title nv-animate">Raspberry Pi 5 + AI HAT+2 — Analizador de Vídeo</h2>
+            <p class="block-intro">
+                Una Raspberry Pi 5 de 8GB con el módulo AI HAT+2 (NPU Hailo-8, 26 TOPS) ejecuta un pipeline en
+                Python con OpenCV y la API de Hailo capaz de describir el contenido de un vídeo: en un entorno
+                real esto se traduce en detectar riesgos laborales, humo u objetos sin intervención humana, y
+                activar protocolos o notificaciones automáticamente.
+            </p>
+
+            <div class="hw-block">
+                <figure class="hw-photo nv-animate">
+                    <img src="./assets/novacreux/raspberry-hat.jpg" alt="Raspberry Pi 5 con módulo AI HAT+2">
+                    <figcaption>Raspberry Pi 5 + AI HAT+2: 26 TOPS de NPU en un consumo de 5-12W.</figcaption>
+                </figure>
+                <div class="nv-animate">
+                    <ul class="hw-specs">
+                        <li><span>Placa</span><span>Raspberry Pi 5 — 8GB RAM</span></li>
+                        <li><span>Acelerador</span><span>AI HAT+2 (NPU Hailo-8, 26 TOPS)</span></li>
+                        <li><span>Consumo medio</span><span>5–12 W</span></li>
+                        <li><span>Rendimiento IA</span><span>3–5 tokens/s (modelos de 3B)</span></li>
+                        <li><span>Stack software</span><span>Python venv · OpenCV · hailo-python-api · Ollama</span></li>
+                        <li><span>Caso de uso</span><span>Visión artificial / IoT en el borde</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOQUE 4 Y 5: NVIDIA SPARK Y JETSON ===== -->
+    <section class="section">
+        <div class="container">
+            <span class="block-eyebrow">Bloques 4 y 5 · IA profesional y robótica</span>
+            <h2 class="section-title nv-animate">NVIDIA Spark & Jetson Orin Nano</h2>
+            <p class="block-intro">
+                En el extremo opuesto de la Raspberry Pi están las dos plataformas de NVIDIA: la Spark, pensada
+                para entrenamiento e inferencia a gran escala, y la Jetson Orin Nano, orientada a Edge AI y
+                robótica con agentes que actúan sobre sensores en tiempo real.
+            </p>
+
+            <div class="hw-block">
+                <div class="nv-animate">
+                    <h3 style="margin-bottom: 4px;">NVIDIA Spark</h3>
+                    <p style="font-size:.9rem;">Arquitectura Blackwell en formato de superordenador personal, probada mediante acceso remoto a una máquina virtual.</p>
+                    <ul class="hw-specs">
+                        <li><span>GPU</span><span>Blackwell</span></li>
+                        <li><span>Memoria</span><span>48–128 GB</span></li>
+                        <li><span>Almacenamiento</span><span>NVMe hasta 60TB</span></li>
+                        <li><span>Consumo</span><span>100–240 W</span></li>
+                        <li><span>Capacidad IA</span><span>Modelos de 70B a 400B</span></li>
+                        <li><span>Rendimiento</span><span>15–22 tokens/s</span></li>
+                    </ul>
+                </div>
+                <figure class="hw-photo nv-animate">
+                    <img src="./assets/novacreux/jetson-kit.jpg" alt="Kit de desarrollo NVIDIA Jetson Orin Nano">
+                    <figcaption>Kit de desarrollo de la Jetson Orin Nano: sensores, actuadores y pantalla táctil para prototipar agentes de IA sobre hardware físico.</figcaption>
+                </figure>
+            </div>
+
+            <h3 style="margin-top:10px;">NVIDIA Jetson Orin Nano</h3>
+            <p class="block-intro">
+                Sobre un kit de desarrollo con sensores, actuadores y pantalla integrada, se probó cómo un
+                agente de IA puede leer datos de sensores y actuar en consecuencia de forma autónoma — la base
+                de cualquier aplicación de robótica o IoT industrial.
+            </p>
+            <ul class="hw-specs" style="max-width:520px;">
+                <li><span>Arquitectura</span><span>Ampere</span></li>
+                <li><span>Rendimiento</span><span>40 TOPS</span></li>
+                <li><span>Consumo</span><span>7–15 W</span></li>
+                <li><span>Memoria compartida</span><span>8 GB</span></li>
+                <li><span>Capacidad IA</span><span>Modelos de 1B a 7B</span></li>
+                <li><span>Rendimiento IA</span><span>10–15 tokens/s</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== COMPARATIVA DE HARDWARE ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title nv-animate">Comparativa de hardware</h2>
+            <p class="block-intro">Cuatro plataformas, cuatro propósitos distintos. Ninguna gana en todo — cada una tiene su lugar según el caso de uso.</p>
+
+            <div class="table-scroll nv-animate">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>RTX 4060 Ti 16GB</th>
+                            <th>Raspberry Pi + HAT2+</th>
+                            <th>NVIDIA Spark</th>
+                            <th>Jetson Orin Nano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Arquitectura</td>
+                            <td>Ada Lovelace</td>
+                            <td>ARM Cortex-A76 + NPU Hailo-8</td>
+                            <td>Blackwell</td>
+                            <td>Ampere</td>
+                        </tr>
+                        <tr>
+                            <td>Memoria</td>
+                            <td>16GB GDDR6</td>
+                            <td>8GB LPDDR4 + 26 TOPS NPU</td>
+                            <td>48–128GB</td>
+                            <td>8GB compartida</td>
+                        </tr>
+                        <tr>
+                            <td>Consumo (TDP)</td>
+                            <td>165W</td>
+                            <td>5–12W</td>
+                            <td>100–240W</td>
+                            <td>7–15W</td>
+                        </tr>
+                        <tr>
+                            <td>Uso típico</td>
+                            <td>IA local (hasta 24B), gaming</td>
+                            <td>Edge AI, visión artificial, IoT</td>
+                            <td>Entrenamiento, modelos de 70B–400B</td>
+                            <td>Edge AI, robótica</td>
+                        </tr>
+                        <tr>
+                            <td>Ventaja</td>
+                            <td>Coste bajo, baja latencia</td>
+                            <td>Consumo ultra bajo, portátil</td>
+                            <td>Escalabilidad, gran memoria</td>
+                            <td>Ecosistema JetPack, tiempo real</td>
+                        </tr>
+                        <tr>
+                            <td>Limitación</td>
+                            <td>VRAM insuficiente para modelos grandes</td>
+                            <td>No apta para modelos grandes</td>
+                            <td>Coste, consumo, complejidad</td>
+                            <td>Memoria compartida limitada (8GB)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="calc-card nv-animate">
+                <h3><i class="fas fa-bolt" style="color:var(--accent-secondary);"></i>&nbsp; Calculadora de coste energético</h3>
+                <p class="calc-sub">Estimación de gasto anual por plataforma, a partir de los consumos medidos en el proyecto.</p>
+
+                <div class="calc-row">
+                    <div class="calc-field">
+                        <label for="calc-device">Plataforma</label>
+                        <select id="calc-device">
+                            <option value="homelab">Homelab Server</option>
+                            <option value="pcia">PC IA Local (RTX 4060 Ti)</option>
+                            <option value="raspberry">Raspberry Pi 5 + AI HAT+2</option>
+                            <option value="jetson">NVIDIA Jetson Orin Nano</option>
+                            <option value="spark">NVIDIA Spark</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-hours">Horas de uso al día <span class="val" id="calc-hours-value">24 h/día</span></label>
+                        <input type="range" id="calc-hours" min="1" max="24" step="1" value="24">
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-price">Precio de la electricidad <span class="val" id="calc-price-value">0.15 €/kWh</span></label>
+                        <input type="range" id="calc-price" min="0.05" max="0.40" step="0.01" value="0.15">
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div class="calc-result-item">
+                        <div class="value" id="calc-result-daily">—</div>
+                        <div class="label">Consumo diario</div>
+                    </div>
+                    <div class="calc-result-item">
+                        <div class="value" id="calc-result-annual">—</div>
+                        <div class="label">Consumo anual</div>
+                    </div>
+                    <div class="calc-result-item">
+                        <div class="value" id="calc-result-cost">—</div>
+                        <div class="label">Coste anual estimado</div>
+                    </div>
+                </div>
+                <p class="calc-note" id="calc-result-note"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== APRENDIZAJES Y PRÓXIMOS PASOS ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title nv-animate">Aprendizajes y próximos pasos</h2>
+            <div class="lessons-grid">
+                <div class="lessons-card done nv-animate">
+                    <h3>Lo que funcionó</h3>
+                    <ul>
+                        <li>Segmentar cada servicio en Docker evita que un fallo tumbe el resto del homelab.</li>
+                        <li>Comparar 5 plataformas reales enseña mejor que cualquier tabla de especificaciones: cada una tiene un caso de uso claro.</li>
+                        <li>Usar el propio proyecto (el agente n8n) en producción en este portfolio, no solo como demo.</li>
+                        <li>Medir consumo y coste real antes de recomendar una plataforma, no solo rendimiento.</li>
+                    </ul>
+                </div>
+                <div class="lessons-card todo nv-animate">
+                    <h3>Próximos pasos</h3>
+                    <ul>
+                        <li>Analizador de vídeo de la Raspberry en directo (cámara en tiempo real, no vídeo pregrabado).</li>
+                        <li>Migrar la VPN de Tailscale a Wireguard 100% autoalojado.</li>
+                        <li>Sustituir Fail2ban por CrowdSec, con inteligencia compartida entre nodos.</li>
+                        <li>Chatbot en Raspberry accesible por WhatsApp/Telegram, orquestado con n8n.</li>
+                        <li>Montar un NAS con redundancia real para el homelab.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-band nv-animate">
+                <h2>¿Quieres ver el proyecto con más detalle?</h2>
+                <p>La memoria técnica completa recoge cada paso de instalación, configuración y prueba de los 5 bloques del proyecto.</p>
+                <div class="cta-actions">
+                    <a href="./assets/novacreux/Novacreux_TFG.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf"></i>&nbsp; Descargar memoria (PDF)</a>
+                    <a href="./index.html#proyectos" class="btn btn-outline"><i class="fas fa-arrow-left"></i>&nbsp; Volver a proyectos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO / PIE DE PÁGINA ===== -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">IZAN<span>.</span></div>
+                    <p>Administrador de Sistemas y Especialista en Ciberseguridad con enfoque en soluciones robustas, seguras y automatizadas.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Izan1706" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/izan-rodríguez-garcía-a35652295" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:izanro06@gmail.com" onclick="handleContactClick(event)" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> izanro06@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barcelona, España</li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="./index.html#sobre-mi">Sobre mí</a></li>
+                        <li><a href="./homelab.html">HomeLab & Sistemas</a></li>
+                        <li><a href="./izanagi.html">Herramientas Propias</a></li>
+                        <li><a href="./ia_local.html">IA Local</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Systems Operational</span>
+                <span class="uptime">Uptime: 99.9%</span>
+            </div>
+            <div class="copyright">
+                &copy; 2026 IZAN. Todos los derechos reservados. Portafolio técnico de administración de sistemas y ciberseguridad.
+            </div>
+        </div>
+        <div class="security-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24c.304-.143.662-.352 1.048-.625a11.777 11.777 0 0 0 2.517-2.453c1.678-2.195 2.961-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+            </svg>
+            <span>SSL Secured | AES-256 Verified Connection</span>
+        </div>
+    </footer>
+
+    <!-- ===== MODALES DE SERVICIOS DEL HOMELAB ===== -->
+    <div class="modal" id="modal-tailscale">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">VPN · Tailscale</h2>
+                <button class="close-modal" onclick="closeModal('tailscale')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Solución VPN basada en Wireguard que permite conectarse a la red del homelab desde
+                prácticamente cualquier dispositivo (Ubuntu Server, Windows, Android) sin exponer puertos
+                ni datos a internet. La configuración es mínima: instalar el cliente y vincular una cuenta.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Dashboard de administración con todos los equipos conectados y sus IPs</li>
+                    <li>Control de acceso granular por usuario y dispositivo</li>
+                    <li>Magic DNS: acceso a servicios por nombre en vez de IP</li>
+                    <li>Funnels para exponer un servicio local de forma controlada</li>
+                    <li>Logs activados para auditoría</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Tailscale</span>
+                    <span class="tag">Wireguard</span>
+                    <span class="tag">Zero Trust</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('tailscale')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-pihole">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Pi-Hole</h2>
+                <button class="close-modal" onclick="closeModal('pihole')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Servidor DNS propio para filtrar publicidad y dominios maliciosos en toda la red doméstica,
+                y para asignar nombres fáciles de recordar a los servicios locales en lugar de IPs.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Bloqueo de publicidad y tracking a nivel de red, sin instalar nada en cada dispositivo</li>
+                    <li>Resolución de nombres locales (DNS interno)</li>
+                    <li>Estadísticas de consultas bloqueadas en tiempo real</li>
+                    <li>Corre en el puerto 53, contenerizado con Docker</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Pi-Hole</span>
+                    <span class="tag">DNS</span>
+                    <span class="tag">Docker</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('pihole')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-immich">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Galería Immich</h2>
+                <button class="close-modal" onclick="closeModal('immich')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Plataforma autoalojada de código abierto para gestionar fotos y vídeos en red, equivalente
+                libre a Google Fotos, con sincronización automática desde el móvil.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Sincronización de galería desde móvil u otros dispositivos</li>
+                    <li>Machine Learning local para reconocimiento y búsqueda</li>
+                    <li>Desplegado con Docker Compose: servidor, Postgres, Redis y módulo ML</li>
+                    <li>Clientes disponibles vía web, Apple y Android</li>
+                    <li>Reduce el consumo de almacenamiento del dispositivo y evita servicios de pago</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Immich</span>
+                    <span class="tag">Docker Compose</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Redis</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('immich')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-fail2ban">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Fail2ban</h2>
+                <button class="close-modal" onclick="closeModal('fail2ban')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Sistema de prevención de intrusiones por fuerza bruta. Monitoriza los logs del sistema y,
+                al detectar demasiados intentos fallidos de login desde una misma IP, levanta automáticamente
+                una regla de firewall que la banea durante un tiempo configurable.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Jail específica para SSH activada</li>
+                    <li>Parámetros configurables: bantime, findtime y maxretry</li>
+                    <li>Probado en real: 5 intentos fallidos desde un móvil provocaron el baneo esperado</li>
+                    <li>Sustitución prevista por CrowdSec, con inteligencia compartida entre nodos</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Fail2ban</span>
+                    <span class="tag">SSH</span>
+                    <span class="tag">Hardening</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('fail2ban')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-uptimekuma">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Uptime Kuma</h2>
+                <button class="close-modal" onclick="closeModal('uptimekuma')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Herramienta de monitorización autoalojada con interfaz moderna y visual. Vigila servicios,
+                puertos TCP, pings y contenedores Docker, y avisa en caso de incidencia.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Monitores configurables por puerto TCP, ping o DNS</li>
+                    <li>Registro de incidentes históricos</li>
+                    <li>Alertas ante caídas de servicio</li>
+                    <li>Desplegado en Docker, puerto 3001</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Uptime Kuma</span>
+                    <span class="tag">Monitorización</span>
+                    <span class="tag">Docker</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('uptimekuma')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-netdata">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Netdata</h2>
+                <button class="close-modal" onclick="closeModal('netdata')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Monitorización de infraestructura en tiempo real con visibilidad total del servidor: CPU,
+                memoria, discos, red y servicios. Complementa a Uptime Kuma con datos de rendimiento muy
+                detallados a nivel de hardware.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Despliegue rápido en Docker con --pid=host y --network=host</li>
+                    <li>Volúmenes de solo lectura sobre /proc y /sys para máxima seguridad</li>
+                    <li>Identificación visual de anomalías y cuellos de botella</li>
+                    <li>Métricas por segundo, sin necesidad de configuración compleja</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">Netdata</span>
+                    <span class="tag">Observabilidad</span>
+                    <span class="tag">Docker</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('netdata')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-n8n">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">n8n</h2>
+                <button class="close-modal" onclick="closeModal('n8n')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Plataforma de automatización de flujos de trabajo basada en nodos, fair-code y autoalojable
+                — alternativa gratuita a Zapier, sin límite de ejecuciones (solo limitada por el propio
+                hardware). Es el orquestador del agente IA de este portfolio.</p>
+                <h3>Características Clave</h3>
+                <ul style="margin-left: 20px; color: var(--text-secondary);">
+                    <li>Orquesta el agente IA con RAG que atiende el chat de esta web</li>
+                    <li>Integraciones vía API con múltiples servicios</li>
+                    <li>Gestión, arranque y notificación de contenedores Docker</li>
+                    <li>Base para automatizar copias de seguridad y procesos repetitivos</li>
+                </ul>
+                <div class="modal-tech">
+                    <span class="tag">n8n</span>
+                    <span class="tag">Automatización</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">Low-code</span>
+                </div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button class="btn" onclick="closeModal('n8n')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="novacreux.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CVQ2B2LY4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8CVQ2B2LY4');
+    </script>
+</body>
+</html>
