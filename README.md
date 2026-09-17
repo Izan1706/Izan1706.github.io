@@ -1,6 +1,6 @@
 # Izan Rodríguez García - Portfolio Técnico
 
-> **Administrador de Sistemas y Especialista en Ciberseguridad** con enfoque en soluciones robustas, seguras y automatizadas.
+> **Administrador de Sistemas y Ciberseguridad** con enfoque en soluciones robustas, seguras y automatizadas.
 
 ---
 
